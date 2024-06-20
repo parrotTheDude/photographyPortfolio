@@ -14,9 +14,10 @@ header {
 nav {
   margin: 30px auto;
   padding: 0 20px;
-  text-align: center;
+  text-align: left;
   display: inline-block;
   float: left;
+  width: 30%;
 }
 
 ul {
@@ -33,7 +34,8 @@ li {
   font-weight: 300;
   text-transform: uppercase;
   display: inline-block;
-  width: 80px;
+  width: auto;
+  margin: 0 10px;
 }
 
 li:hover {
@@ -94,4 +96,14 @@ footer {
 
 #navSocial{
   float: right;
+  width: 30%;
+  text-align: right;
+}
+
+#titleName {
+  margin: 0 auto;
+  padding: 0 50px;
+  text-align: center;
+  display: inline-block;
+  width: 30%;
 }
