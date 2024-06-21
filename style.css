@@ -1,9 +1,13 @@
 
-/* Universal Properties */
+
+/* General CSS */
+
+
 
 body {
   background-color: #FFF;
   margin: 0 auto;
+  width: 100%;
 }
 
 header {
@@ -123,7 +127,8 @@ a:hover {
 /* Classes */
 
 .display {
-  margin: 0 auto;
+  max-width: 45%;
+  text-align: center;
 }
 
 .displayImg {
