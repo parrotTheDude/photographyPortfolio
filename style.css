@@ -1,3 +1,6 @@
+
+/* Universal Properties */
+
 body {
   background-color: #FFF;
   margin: 0 auto;
@@ -87,7 +90,7 @@ p {
 footer {
   background-color: #DBE9EE;
   text-align: center;
-  height: 100px;
+  height: 80px;
 }
 
 a {
@@ -99,9 +102,8 @@ a:hover {
   color: orange;
 }
 
-.socials{
 
-}
+/* ID's */
 
 #navSocial{
   float: right;
@@ -115,4 +117,15 @@ a:hover {
   text-align: center;
   display: inline-block;
   width: 30%;
+}
+
+
+/* Classes */
+
+.display {
+  margin: 0 auto;
+}
+
+.displayImg {
+  max-width: 45%;
 }
