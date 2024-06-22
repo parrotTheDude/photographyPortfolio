@@ -2,8 +2,6 @@
 
 /* General CSS */
 
-
-
 body {
   background-color: #FFF;
   margin: 0 auto;
@@ -13,7 +11,7 @@ body {
 header {
   background-color: #000;
   border-bottom: 1px solid #466995;
-  position: fixed;
+  position: static;
   width: 100%;
   z-index: 10;
 }
@@ -55,46 +53,8 @@ h1 {
   font-size: 32px;
   font-weight: 300;
   text-transform: uppercase;
-}
-
-h2 {
-  color: #333;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 26px;
-  font-weight: 100;
-  margin: 0 auto 20px auto;
-}
-
-h3 {
-  color: #466995;
-  font-family: 'Oswald', sans-serif;
-  font-size: 18px;
   text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 30px;
-}
-
-h4 {
-  color: #466995;
-  font-family: 'Oswald', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-align: center;
-  text-transform: uppercase
-}
-
-p {
-  color: #333;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 18px;
-}
-
-footer {
-  background-color: #DBE9EE;
-  text-align: center;
-  height: 80px;
+  display: block;
 }
 
 a {
@@ -117,20 +77,26 @@ a:hover {
 
 #titleName {
   margin: 0 auto;
-  padding: 0 50px;
   text-align: center;
   display: inline-block;
   width: 30%;
 }
 
+#center {
+  justify-content: center;
+}
+
 
 /* Classes */
 
-.display {
-  max-width: 45%;
-  text-align: center;
+.container {
+  width: 100%;
+  display: flex;
+  background-color: whitesmoke;
+  overflow: hidden;
 }
 
-.displayImg {
-  max-width: 45%;
+.box {
+  display: inline-block;
+  max-height: 40em;
 }
