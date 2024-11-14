@@ -6,6 +6,9 @@ body {
   background-color: #FFF;
   margin: 0 auto;
   width: 100%;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
 }
 
 header {
@@ -30,13 +33,11 @@ nav {
 
 ul {
   margin: 2rem auto;
-  text-align: center;
   display: flex;
+  justify-content: center;
 }
 
 li {
-  color: #FFF;
-  font-family: 'Oswald', sans-serif;
   font-size: 1rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -50,10 +51,7 @@ li:hover {
 }
 
 h1 {
-  margin: 1rem auto;
-  color: #fff;
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
+  margin: 1rem auto;  font-size: 2rem;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
@@ -100,3 +98,32 @@ a:hover {
   width: 100%;
   height: auto;
 }
+
+/* About Page */
+
+.about {
+  background-color: #222222;
+  padding: 5rem;
+}
+
+.picture {
+  height: 20rem;
+  width: 20rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  background-image: url(img/evieP.png);
+  background-position: center;
+  background-size: 20rem;
+}
+
+.title {
+  margin: 1rem;
+}
+
+
+
+
+
+
+
