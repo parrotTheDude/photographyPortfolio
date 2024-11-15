@@ -3,7 +3,7 @@
 /* General CSS */
 
 body {
-  background-color: #FFF;
+  background-color: #000;
   margin: 0 auto;
   width: 100%;
   color: #fff;
@@ -89,6 +89,29 @@ a:hover {
   margin: auto 1rem;
   display: flex;
   justify-content: center;
+}
+
+
+/* Footer Things */
+footer {
+  background-color: #222222;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerNote {
+  font-size: 1rem;
+  font-weight: 200;
+  display: flex;
+  justify-content: start;
+  padding-left: 1rem;
+}
+
+.footerNavSocial {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding-right: 1rem;
 }
 
 
