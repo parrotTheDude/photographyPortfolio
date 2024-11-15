@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #000;
+  background-color: #222222;
   border-bottom: 1px solid #466995;
   position: static;
   width: 100%;
@@ -22,17 +22,16 @@ header {
 }
 
 nav {
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0;
   text-align: left;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   float: left;
   width: 35%;
 }
 
 ul {
-  margin: 2rem auto;
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
 }
@@ -51,7 +50,8 @@ li:hover {
 }
 
 h1 {
-  margin: 1rem auto;  font-size: 2rem;
+  margin: 0;  
+  font-size: 2rem;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
@@ -70,19 +70,26 @@ a:hover {
 /* ID's */
 
 #navSocial{
-  float: right;
   width: 35%;
   text-align: right;
   display: flex;
-  justify-content: space-around;
-  padding: 0;
+  justify-content: end;
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+.icon {
+  max-width: 1.1rem;
+  height: auto;
+  -webkit-filter: invert(1);
+  filter: invert(1);
 }
 
 #titleName {
   width: 30%;
-  margin: auto;
+  margin: auto 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 
