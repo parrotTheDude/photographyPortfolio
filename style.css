@@ -130,17 +130,12 @@ a:hover {
 
 .mobileNavContainer {
   transition: 0.4s;
-  display: block;
+  display: none;
   width: 100%;
   height: 100%;
   color: #fff;
   background-color: #222222;
   height: 100vh;
-  display: block;
-}
-
-.change .mobileNavContainer {
-  display: none;
 }
 
 .mobileNavUl{
