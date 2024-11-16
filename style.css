@@ -3,7 +3,7 @@
 /* General CSS */
 
 body {
-  background-color: #000;
+  background-color: #222222;
   margin: 0 auto;
   width: 100%;
   color: #fff;
@@ -116,13 +116,65 @@ footer {
 
 
 /* Graphics page */
-/*old css*/
-.container {
-  display: flex;
-  background-color: whitesmoke;
-}
 
 /* New CSS */
+
+main {
+  width: 94%;
+  margin: 1% 3%;
+  display: block;
+}
+
+.displayCovers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.displayLinks{
+  clear: left;
+  margin-right: 1rem;
+  width: calc(33.33333% - 1rem);
+  display: block;
+  position: relative;
+}
+
+.displayContentContainer {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  max-height: 768px;
+  max-width: 540px;
+}
+
+.coverImageWrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.coverImage {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  position: relative;
+}
+
+.cover {
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
 .display {
   display: flex;
   justify-content: center;
