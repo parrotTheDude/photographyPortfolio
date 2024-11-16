@@ -47,16 +47,24 @@
 		  		</a>
 	      </li>
     	</ul>
+    	<div class='mobileNav'>
+    		<div class="container" onclick="myFunction(this)">
+				  <div class="bar1"></div>
+				  <div class="bar2"></div>
+				  <div class="bar3"></div>
+				</div>
+    	</div>
 		</header>
 
-
-		<!-- NEED TO ADD THINGS OVER THE IMAGES TO TAKE THEM TO THE PROJECTS -->
 		<main> 
 			<div class="displayCovers">
 				<a href="#" class="displayLinks">
 					<div class="displayContentContainer">
 						<div class="coverImageWrap"></div>
 						<div class="coverImage">
+							<div class="overlay">
+								<img class="image" src="img/displayImgs/wholesomeOL.jpg">
+							</div>
 							<div class="cover">
 								<img class="image" src="img/displayImgs/wholesome.png">
 							</div>
@@ -118,7 +126,7 @@
 		</main>
 
 		<footer>
-			<a href="https//:jbowerman.com"><h3 class="footerNote">created by jacob</h3></a>
+			<a href="https://www.jbowerman.com/"><h3 class="footerNote">created by jacob</h3></a>
 			<ul class="footerNavSocial">
     		<li>
 	      	<a href="#">
@@ -137,5 +145,11 @@
 	      </li>
     	</ul>
 		</footer>
+
+		<script>
+		function myFunction(x) {
+		  x.classList.toggle("change");
+		}
+		</script>
 	</body>
 </html>
