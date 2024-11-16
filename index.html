@@ -57,6 +57,41 @@
 		</header>
 
 		<main> 
+			<div id="foo" class="mobileNavContainer">
+				<ul class="mobileNavUl">
+	    		<li class="mobileNavLi">
+		      	<a href="/index.html">Graphics</a>
+		      </li>
+		      <li class="mobileNavLi">
+		      	<a href="/photos.html">Photography</a>
+		      </li>
+		      <li class="mobileNavLi">
+		      	<a href="/about.html">About</a>
+		      </li>
+		      <li class="mobileNavLi">
+		      	<a href="/contact.html">Contact</a>
+		      </li>
+	      </ul>
+	      <ul class="mobileNavUlIcon">
+	    		<li>
+		      	<a href="#">
+			  			<img class='icon bigger' src="icons/linkedin.png">
+			  		</a>
+		      </li>
+		      <li>
+		      	<a href="#">
+			  			<img class='icon bigger' src="icons/instagram.png">
+			  		</a>
+		      </li>
+		      <li>
+		      	<a href="#">
+			  			<img class='icon bigger' src="icons/mail.png">
+			  		</a>
+		      </li>
+	    	</ul>
+    	</div>
+
+
 			<div class="displayCovers">
 				<a href="#" class="displayLinks">
 					<div class="displayContentContainer">
@@ -147,9 +182,10 @@
 		</footer>
 
 		<script>
-		function myFunction(x) {
-		  x.classList.toggle("change");
-		}
+			function myFunction(x) {
+			  x.classList.toggle('change');
+			  test();
+			}
 		</script>
 	</body>
 </html>
