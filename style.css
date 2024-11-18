@@ -217,11 +217,6 @@ main {
   max-width: 540px;
 }
 
-.coverImageWrap {
-  overflow: hidden;
-  position: relative;
-}
-
 .coverImage {
   float: none;
   margin-left: auto;
@@ -236,17 +231,81 @@ main {
   position: relative;
 }
 
-.overlay {
-  display: none;
-  z-index: 5;
-}
-
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* CSS for the hover items */
+.coverTextImage {
+  z-index: 20;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.displayLinks:hover .coverTextImage{
+  opacity: 1;
+}
+
+.coverText {
+  z-index: 21;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  color: red;
+}
+
+.coverTextTitle {
+  padding-top: 60%;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #A61414;
+}
+
+.coverTextSubTitle {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #A61414;
+}
+
+.wholesome {
+  background-image: url("img/displayImgs/wholesomeOL.jpg");
+}
+
+.marble {
+  background-image: url("img/displayImgs/marbleOL.jpg");
+}
+
+.label {
+  background-image: url("img/displayImgs/labelOL.jpg");
+}
+
+.doors {
+  background-image: url("img/displayImgs/doorsOL.jpg");
+}
+
+.w7 {
+  background-image: url("img/displayImgs/w7OL.jpg");
+}
+
+.stitch {
+  background-image: url("img/displayImgs/stitchOL.jpg");
+}
 
 /* About Page */
 
