@@ -1,5 +1,4 @@
 
-
 /* General CSS */
 
 body {
@@ -22,8 +21,7 @@ header {
 }
 
 nav {
-  margin: 0;
-  text-align: left;
+  margin: 0; 
   display: flex;
   justify-content: start;
   float: left;
@@ -161,6 +159,7 @@ a:hover {
 
 
 /* Footer Things */
+
 footer {
   background-color: #222222;
   display: flex;
@@ -190,6 +189,7 @@ footer {
 
 
 /* Graphics page */
+
 main {
   width: 94%;
   margin: 1% 3% 0% 3%;
@@ -238,6 +238,7 @@ main {
 }
 
 /* CSS for the hover items */
+
 .coverTextImage {
   z-index: 20;
   display: block;
@@ -283,6 +284,7 @@ main {
   color: #A61414;
 }
 
+/* Background images for the hover effects */
 .wholesome {
   background-image: url("img/displayImgs/wholesomeOL.jpg");
 }
@@ -306,6 +308,7 @@ main {
 .stitch {
   background-image: url("img/displayImgs/stitchOL.jpg");
 }
+
 
 /* About Page */
 
