@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Oswald:300,700|Varela+Round" rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
-
 		<title>Evie Bowerman</title>
 	</head>
 
@@ -91,7 +90,7 @@
 	    	</ul>
     	</div>
 
-
+    	<div id="hide">
 			<div class="displayCovers">
 				<a href="#" class="displayLinks">
 					<div class="displayContentContainer">
@@ -156,11 +155,11 @@
 						</div>
 					</div>
 				</a>
-
+			</div>
 			</div>
 		</main>
 
-		<footer>
+		<footer id="foot">
 			<a href="https://www.jbowerman.com/"><h3 class="footerNote">created by jacob</h3></a>
 			<ul class="footerNavSocial">
     		<li>
@@ -187,9 +186,13 @@
 			  x.classList.toggle('change');
 			  if (changed === false) {
 			  	document.getElementById("menuToggle").style.display= "block";
+			  	document.getElementById("hide").style.display= "none";
+			  	document.getElementById("foot").style.display= "none";
 			  	changed = true;
 			  } else  {
 			  	document.getElementById("menuToggle").style.display= "none";
+			  	document.getElementById("hide").style.display= "block";
+			  	document.getElementById("foot").style.display= "flex";
 			  	changed = false;
 			  }
 			  
