@@ -86,7 +86,7 @@ a:hover {
 
 .titleName {
   width: 30%;
-  margin: auto 1rem;
+  margin: auto 0rem;
   display: flex;
   justify-content: center;
 }
@@ -363,7 +363,7 @@ main {
 /* Contact Page */
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-  width: 100%;
+  width: 50%;
   padding: 1rem;
   border: 0;
   border-radius: 2rem;
@@ -374,13 +374,15 @@ input[type=text], select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  margin-top: 1rem;
+  display: block;
+  margin: 0.5rem auto;
   background-color: orange;
   color: white;
   padding: 1rem 2rem;
   border: none;
   border-radius: 1rem;
   cursor: pointer;
+  width: 50%;
   transition: 0.3s;
 }
 
@@ -393,22 +395,11 @@ input[type=submit]:hover {
 .tableContainer {
   border-radius: 0.5rem;
   background-color: #222222;
-  padding: 1rem;
+  margin: 2rem;
 } 
 
-.formLabel {
-  text-align: left;
-  text-transform: uppercase;
-}
-
-#name {
-  width: 45%;
-  margin-right: 4%;
-}
-
-#tele {
-  width: 45%;
-  margin-left: 4%;
+.contactTitle {
+  font-weight: 200;
 }
 
 
@@ -477,6 +468,12 @@ input[type=submit]:hover {
   .btnContainerAbout{ 
     margin:1rem;
   }
+  input[type=text], select, textarea {
+    width: 100%;
+  }
+  input[type=submit] {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 550px){
@@ -539,6 +536,12 @@ input[type=submit]:hover {
   }
   .btnContainerAbout{ 
     margin:1rem;
+  }
+  input[type=text], select, textarea {
+    width: 100%;
+  }
+  input[type=submit] {
+    width: 50%;
   }
 }
 
