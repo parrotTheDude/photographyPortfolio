@@ -363,7 +363,7 @@ input[type=submit]:hover {
 }
 
 /* Add a background color and some padding around the form */
-.container {
+.tableContainer {
   border-radius: 0.5rem;
   background-color: #222222;
   padding: 1rem;
