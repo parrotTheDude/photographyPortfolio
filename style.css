@@ -314,22 +314,49 @@ main {
 
 .about {
   background-color: #222222;
-  padding: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.picture {
-  height: 20rem;
-  width: 20rem;
-  background-color: #bbb;
-  border-radius: 50%;
+.leftPanel {
+  display: flex;
+  width: 48%;
+  height: auto;
+}
+
+.rightPanel {
   display: inline-block;
-  background-image: url(img/evieP.png);
-  background-position: center;
-  background-size: 20rem;
+  width: 48%;
+  height: auto;
 }
 
-.title {
+.aboutTitle {
   margin: 1rem;
+  padding-top: 40%;
+}
+
+.aboutPara {
+  font-size: 1.1rem;
+}
+
+.aboutBtns {
+  margin: 1rem;
+  background-color: orange;
+  color: white;
+  padding: 0.3rem 2rem;
+  border: medium;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.aboutBtns:hover {
+  background-color: orangered;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 
@@ -425,6 +452,31 @@ input[type=submit]:hover {
   .footerNote {
     padding-left: 2rem;
   }
+  .about {
+    display: block;
+  }
+  .leftPanel {
+    display: inline-block;
+    width: 80%;
+  }
+  #aboutImg {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20rem;
+  }
+  .rightPanel {
+    width: 80%;
+  }
+  .aboutTitle {
+    padding: 0;
+  }
+  .aboutPara {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+  .btnContainerAbout{ 
+    margin:1rem;
+  }
 }
 
 @media screen and (max-width: 550px){
@@ -462,12 +514,42 @@ input[type=submit]:hover {
   .displayContentContainer {
     margin-bottom: 0;
   }
+  .about {
+    display: block;
+  }
+  .leftPanel {
+    display: inline-block;
+    width: 80%;
+  }
+  #aboutImg {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20rem;
+    padding-top: 1rem;
+  }
+  .rightPanel {
+    width: 80%;
+  }
+  .aboutTitle {
+    padding: 0;
+  }
+  .aboutPara {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+  .btnContainerAbout{ 
+    margin:1rem;
+  }
 }
 
-@media screen and (min-width: 550px) and (max-width: 730px){
- .coverTextTitle {
-  font-size: 1.5rem;
- }
+@media screen and (max-width: 455px){
+ .aboutBtns {
+  display: inline-block;
+  margin: 0.6rem;
+  }
+  .aboutPara {
+    padding-bottom: 0rem;
+  }
 }
 
 
