@@ -1,3 +1,34 @@
+<?php
+if(isset($_POST['submit'])){
+	//Get form data
+	$name = $_POST['name']; 
+	$email = $_POST['email'];
+	$message = $_POST['message'];
+	
+    //Email address validation and display error message
+	$email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+ 
+    if (!preg_match($email_exp, $email)) {
+        echo '<br><span style="color:red;">The Email address you entered is not valid.</span>';
+		exit;
+    }
+	
+	$to = "bills.hamper476@passinbox.com";  //recipient email address
+	$subject = "Test Contact Form";  //Subject of the email
+	
+	//Message content to send in an email
+	$message = "Name: ".$name."<br>Email: ".$email."<br> Message".$message;
+	
+	//Email headers
+	$headers = "From: hello@eviebowerman.com"."\r\n";
+	$headers = "CC: someone@example.com";
+	$headers .= "Reply-To:".$email."\r\n";
+	
+	//Send email 
+	mail($to, $subject, $message, $headers);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -105,18 +136,19 @@
 
     		<!-- Contact form -->
     		 <div class="tableContainer">
-    		 		<h3 class="contactTitle">If you fancy getting in touch, drop me a messaging using the form below!</h3>
-					  <form action="mailto:apple.deepen015@passinbox.com"
-						method="POST"
-						enctype="multipart/form-data"
-						name="EmailForm">
-					    <input type="text" id="name" name="name" placeholder="Your name...">
-					    <input type="text" id="email" name="email" placeholder="Your email...">
+    		 		<h3 class="contactTitle">Get in touch now!</h3>
 
-					    <textarea id="subject" name="subject" placeholder="Message..." style="height:20rem"></textarea>
+    		 		<div class="main-contact-form">
+    		 			<form action="#" method="POST">
+						    <input type="text" id="name" name="name" placeholder="Your name..." required>
+						    <input type="text" id="email" name="email" type="email" placeholder="Your email..." required>
 
-					    <input type="submit" value="Submit">
-					  </form>
+						    <textarea id="message" name="message" type="message" placeholder="Message..." style="height:20rem" required></textarea>
+
+						    <input name="submit" type="submit" value="Submit">
+						  </form>
+    		 		</div>
+
 					</div> 
 			</div>
 		</main>
