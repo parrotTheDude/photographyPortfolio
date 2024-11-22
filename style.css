@@ -425,15 +425,16 @@ input[type=submit]:hover {
 .flexBox {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  max-height: 60rem;
 }
 
 .extraImages {
-  display: flex;
-  max-width: 50%;
+  max-width: 48%;
 }
 
 .graphicsDisplay {
-  display: flex;
+  display: block;
   justify-content: space-between; 
   width: 100%;
 }
