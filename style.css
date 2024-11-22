@@ -403,6 +403,46 @@ input[type=submit]:hover {
 }
 
 
+/* Individual Graphics Pages */
+
+.graphicsDetails {
+  max-width: 80%;
+  margin: auto;
+}
+
+.graphicsDetailsTitle {
+  font-size: 1.5rem;
+}
+
+.graphicsDetailsPara {
+  font-size: 1.2rem;
+}
+
+.graphicsImage {
+  width: 100%;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.extraImages {
+  display: flex;
+  max-width: 50%;
+}
+
+.graphicsDisplay {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.graphicsContainer {
+  min-width: 50rem;
+}
+
+
 /* Media Queries */
 
 @media screen and (min-width: 1024px) {
