@@ -418,6 +418,10 @@ input[type=submit]:hover {
   font-size: 1.2rem;
 }
 
+.graphicsDetailsTag {
+  font-size: 1.2rem;
+}
+
 .graphicsImage {
   width: 100%;
 }
@@ -427,10 +431,12 @@ input[type=submit]:hover {
   justify-content: space-between;
   overflow: hidden;
   max-height: 60rem;
+  width: 98%;
+  margin-bottom: 2rem;
 }
 
 .extraImages {
-  max-width: 48%;
+  width: 48%;
 }
 
 .graphicsDisplay {
@@ -439,8 +445,28 @@ input[type=submit]:hover {
   width: 100%;
 }
 
+.leftGraphic {
+  display: flex;
+  width: 50%;
+  height: auto;
+}
+
+.rightGraphic {
+  display: flex;
+  width: 50%;
+  height: auto;
+  justify-content: center;
+}
+
 .graphicsContainer {
-  min-width: 50rem;
+  max-height: 60rem;
+  max-width: 40rem;
+  display: block;
+}
+
+.extraGraphicsContainer {
+
+  display: block;
 }
 
 
@@ -594,6 +620,18 @@ input[type=submit]:hover {
   }
   .aboutPara {
     padding-bottom: 0rem;
+  }
+}
+
+@media screen and (max-width: 860px){
+  .extraImages {
+    width: 98%;
+  }
+  .leftGraphic {
+    width: 98%;
+  }
+  .rightGraphic {
+    display: none;
   }
 }
 
