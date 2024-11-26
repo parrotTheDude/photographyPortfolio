@@ -371,7 +371,15 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-/* Style the submit button with a specific background color etc */
+input[type=email], select, textarea {
+  width: 50%;
+  padding: 1rem;
+  border: 0;
+  box-sizing: border-box;
+  margin: 0.5rem auto;
+  resize: vertical;
+}
+
 input[type=submit] {
   display: block;
   margin: 0.5rem auto;
@@ -379,15 +387,25 @@ input[type=submit] {
   color: white;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 1rem;
   cursor: pointer;
   width: 50%;
   transition: 0.3s;
 }
 
-/* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: orangered;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+.form-input {
+    display: block;
+}
+
+.form-error {
+    color: red;
 }
 
 /* Add a background color and some padding around the form */
