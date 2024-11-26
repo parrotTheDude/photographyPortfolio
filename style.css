@@ -465,8 +465,24 @@ input[type=submit]:hover {
 }
 
 .extraGraphicsContainer {
-
   display: block;
+}
+
+.lowerDisplayLinks{
+  clear: left;
+  margin-right: 1rem;
+  width: 30%;
+  display: inline-block;
+  position: relative;
+}
+
+.lowerDisplayLinks:hover .coverTextImage{
+  opacity: 1;
+}
+
+.extrasTitle {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 
@@ -486,6 +502,12 @@ input[type=submit]:hover {
   .displayLinks {
     width: calc(50% - 1rem);
   }
+  .lowerDisplayLinks {
+    width: 45%;
+  }
+  .hide { 
+  display:none;
+   }
   .mobileNav {
     display: inline-block;
   }
@@ -546,6 +568,10 @@ input[type=submit]:hover {
 
 @media screen and (max-width: 550px){
   .displayLinks {
+    width: 100%;
+    margin-right: 0rem;
+  }
+  .lowerDisplayLinks {
     width: 100%;
     margin-right: 0rem;
   }
@@ -632,6 +658,9 @@ input[type=submit]:hover {
   }
   .rightGraphic {
     display: none;
+  }
+  .flexBox {
+    justify-content: center;
   }
 }
 
