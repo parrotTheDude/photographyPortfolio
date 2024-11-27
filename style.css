@@ -359,6 +359,10 @@ main {
   text-transform: uppercase;
 }
 
+.btnContainerAbout {
+  margin: 2rem;
+}
+
 
 /* Contact Page */
 /* Style inputs with type="text", select elements and textareas */
@@ -380,9 +384,9 @@ input[type=email], select, textarea {
   resize: vertical;
 }
 
-input[type=submit] {
+.submit {
   display: block;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
   background-color: orange;
   color: white;
   padding: 1rem 2rem;
@@ -392,7 +396,7 @@ input[type=submit] {
   transition: 0.3s;
 }
 
-input[type=submit]:hover {
+.submit:hover {
   background-color: orangered;
 }
 
@@ -573,12 +577,15 @@ input[type=submit]:hover {
     padding-bottom: 1rem;
   }
   .btnContainerAbout{ 
-    margin:1rem;
+    margin: 2rem;
   }
   input[type=text], select, textarea {
     width: 100%;
   }
-  input[type=submit] {
+  input[type=email], select, textarea {
+    width: 100%;
+  }
+  .submit {
     width: 50%;
   }
 }
@@ -646,12 +653,15 @@ input[type=submit]:hover {
     padding-bottom: 1rem;
   }
   .btnContainerAbout{ 
-    margin:1rem;
+    margin: 2rem;
   }
   input[type=text], select, textarea {
     width: 100%;
   }
-  input[type=submit] {
+  input[type=email], select, textarea {
+    width: 100%;
+  }
+  .submit {
     width: 50%;
   }
 }
