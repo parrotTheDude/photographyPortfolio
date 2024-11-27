@@ -20,16 +20,25 @@ header {
   justify-content: space-between;
 }
 
-nav {
+.mainNav {
   margin: 0; 
   display: flex;
   justify-content: start;
-  float: left;
-  width: 35%;
-  padding-left: 2rem;
+  width: 33%;
 }
 
 ul {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.mainNavMenu {
+  display: flex;
+  justify-content: start;
+}
+
+.mainSocialsMenu {
   margin: 1rem auto;
   display: flex;
   justify-content: center;
@@ -69,12 +78,9 @@ a:hover {
 /* Header Things */
 
 .navSocial{
-  width: 35%;
-  text-align: right;
   display: flex;
   justify-content: end;
   padding-right: 3rem;
-  padding-left: 0;
 }
 
 .icon {
@@ -88,7 +94,7 @@ a:hover {
   width: 30%;
   margin: auto 0rem;
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 .mobileNav {
@@ -535,7 +541,7 @@ input[type=email], select, textarea {
   .navSocial {
     display: none;
   }
-  nav {
+  .mainNav {
     display: none;
   }
   .titleName {
@@ -605,7 +611,7 @@ input[type=email], select, textarea {
   .navSocial {
     display: none;
   }
-  nav {
+  .mainNav {
     display: none;
   }
   main {

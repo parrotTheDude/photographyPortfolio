@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Important Links -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<base href="https://eviebowerman.com">
+
+		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:300,700|Varela+Round" rel="stylesheet">
+
+		<!-- Links for style sheets -->
 		<link rel="stylesheet" href="style.css">
+
+		<!-- Title and Description tags -->
 		<title>Graphic Design and Photography Specialist</title>
     <meta name="description" content="Home to all things graphic design and photography. If you're looking to work with me, get in touch now!">
-		<base href="https://eviebowerman.com">
+
+ 		<!--Add favorites icons-->   
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<!--Add favorites icons-->
 		<link rel="apple-touch-icon" href="/icons/evieLogo.png"/>
 		<link rel="icon" type="image/x-icon" href="/icons/evieLogo.png"/>
 	</head>
@@ -18,54 +26,68 @@
 		<!-- Header -->
 		<header>
 			<!-- Main Navigation menu for Desktop -->
-			<nav>
-	      <li>
-	      	<a href="/">Graphics</a>
-	      </li>
-	      <li>
-	      	<a href="/photos.html">Photography</a>
-	      </li>
-	      <li>
-	      	<a href="/about.html">About</a>
-	      </li>
-	      <li>
-	      	<a href="/contact.html">Contact</a>
-	      </li>
+			<nav class="mainNav">
+				<menu class="mainNavMenu">
+		      <li>
+		      	<a href="/">Graphics</a>
+		      </li>
+		      <li>
+		      	<a href="/photos.html">Photography</a>
+		      </li>
+		      <li>
+		      	<a href="/about.html">About</a>
+		      </li>
+		      <li>
+		      	<a href="/contact.html">Contact</a>
+		      </li>
+	    	</menu>
     	</nav>
-    	<div class="titleName">
-    		<h1>Evie Bowerman</h1>
-    	</div>
-    	
-    	<!-- Social Navigation Links and that -->
-    	<ul class="navSocial">
-    		<li>
-	      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
-		  			<img class='icon' src="icons/linkedin.png">
-		  		</a>
-	      </li>
-	      <li>
-	      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-		  			<img class='icon' src="icons/instagram.png">
-		  		</a>
-	      </li>
-	      <li>
-	      	<a href="/contact.html">
-		  			<img class='icon' src="icons/mail.png">
-		  		</a>
-	      </li>
-    	</ul>
 
-    	<!-- Mobile menu shape -->
-    	<div class='mobileNav'>
+    	<!-- Section for the title -->
+    	<section class="titleName">
+    		<h1><a href="/">Evie Bowerman</a></h1>
+    	</section>
+    	
+    	<!-- Social Links -->
+    	<section class="navSocial">
+	    	<menu class="mainSocialsMenu">
+	    		<!-- LinkedIn -->
+	    		<li>
+		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
+			  			<img class='icon' src="icons/linkedin.png">
+			  		</a>
+		      </li>
+		      <!-- Instagram -->
+		      <li>
+		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
+			  			<img class='icon' src="icons/instagram.png">
+			  		</a>
+		      </li>
+		      <!-- Email which sends to the contact page -->
+		      <li>
+		      	<a href="/contact.html">
+			  			<img class='icon' src="icons/mail.png">
+			  		</a>
+		      </li>
+	    	</menu>
+    	</section>
+
+    	<!-- Mobile burger menu -->
+    	<section class='mobileNav'>
     		<div class="container" onclick="menuSwitch(this)">
 				  <div class="bar1"></div>
 				  <div class="bar2"></div>
 				  <div class="bar3"></div>
 				</div>
-    	</div>
+    	</section>
 		</header>
 
-		<!-- Main Div -->
+
+		<!-- START HERE TOMRRROW FOR MAKING THIS PAGE MORE SEMANTIC -->
+
+
+
+		<!-- Main -->
 		<main> 
 			<!-- Content menu for the mobile devices -->
 			<div class="mobileNavContainer" id="menuToggle">
