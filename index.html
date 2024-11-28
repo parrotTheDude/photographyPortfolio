@@ -87,9 +87,9 @@
 		<!-- Main -->
 		<main> 
 			<!-- Content menu for the mobile devices -->
-			<div class="mobileNavContainer" id="menuToggle">
+			<section class="mobileNavContainer" id="menuToggle">
 				<!-- General Links -->
-				<ul class="mobileNavUl">
+				<menu class="mobileNavUl">
 	    		<li class="mobileNavLi">
 		      	<a href="/">Graphics</a>
 		      </li>
@@ -102,10 +102,10 @@
 		      <li class="mobileNavLi">
 		      	<a href="/contact.html">Contact</a>
 		      </li>
-	      </ul>
+	      </menu>
 
 	      <!-- Social Icons-->
-	      <ul class="mobileNavUlIcon">
+	      <menu class="mobileNavUlIcon menuFlex">
 	    		<li>
 		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
 			  			<img class='icon bigger' src="icons/linkedin.png">
@@ -121,8 +121,8 @@
 			  			<img class='icon bigger' src="icons/mail.png">
 			  		</a>
 		      </li>
-	    	</ul>
-    	</div>
+	    	</menu>
+    	</section>
 
     	<!-- Div container for all the display panels -->
     	<div id="hide">
@@ -259,10 +259,14 @@
 		<!-- Footer area -->
 		<footer id="foot">
 			<!-- Left side text -->
-			<a target="_blank" href="https://www.jbowerman.com/"><h3 class="footerNote">created by jacob</h3></a>
+			<aside>
+				<a target="_blank" href="https://www.jbowerman.com/">
+					<h3 class="footerNote">created by jacob</h3>
+				</a>
+			</aside>
 
 			<!-- Social nav links for the footer -->
-			<ul class="footerNavSocial">
+			<menu class="footerNavSocial">
     		<li>
 	      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/" target="_blank">
 		  			<img class='icon' src="icons/linkedin.png">
@@ -278,7 +282,7 @@
 		  			<img class='icon' src="icons/mail.png">
 		  		</a>
 	      </li>
-    	</ul>
+    	</menu>
 		</footer>
 
 		<!-- JS Section to make the mobile menu funciton and hide the rest of the content when it is active -->
