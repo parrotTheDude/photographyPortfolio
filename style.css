@@ -1,17 +1,16 @@
-
 /* General CSS */
 
 body {
-  background-color: #222222;
+  background-color: #27371C;
   margin: 0 auto;
   width: 100%;
-  color: #fff;
-  font-family: 'Oswald', sans-serif;
+  color: #E4E8DB;
+  font-family: Alverata, Helvetica, sans-serif;
   text-align: center;
 }
 
 header {
-  background-color: #222222;
+  background-color: #27371C;
   position: static;
   width: 100%;
   height: 3.625rem;
@@ -36,6 +35,7 @@ ul {
 .mainNavMenu {
   display: flex;
   justify-content: start;
+  padding-left: 1rem;
 }
 
 .mainSocialsMenu {
@@ -44,13 +44,17 @@ ul {
   justify-content: center;
 }
 
+.mainSocialsMenu li {
+  margin: auto 1rem;
+}
+
 li {
   font-size: 1rem;
   font-weight: 300;
   text-transform: uppercase;
   display: flex;
   width: auto;
-  margin: auto 1rem;
+  margin: auto 0.5rem;
 }
 
 li:hover {
@@ -63,10 +67,11 @@ h1 {
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
+  font-family: AlverataBold, HelveticaBold, sans-serif;
 }
 
 a {
-  color: #fff;
+  color: #E4E8DB;
   text-decoration: none;
 }
 
@@ -80,7 +85,7 @@ a:hover {
 .navSocial{
   display: flex;
   justify-content: end;
-  padding-right: 3rem;
+  padding-right: 1rem;
 }
 
 .icon {
@@ -91,7 +96,7 @@ a:hover {
 }
 
 .titleName {
-  width: 30%;
+  width: 38%;
   margin: auto 0rem;
   display: flex;
   justify-content: start;
@@ -103,7 +108,7 @@ a:hover {
   -webkit-filter: invert(1);
   filter: invert(1);
   padding: 0.7rem;
-  padding-right: 3rem;
+  padding-right: 2rem;
   display: none;
 }
 
@@ -115,7 +120,7 @@ a:hover {
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #333;
+  background-color: #323331;
   margin: 6px 0;
   transition: 0.3s;
 }
@@ -137,8 +142,8 @@ a:hover {
   display: none;
   width: 100%;
   height: 100%;
-  color: #fff;
-  background-color: #222222;
+  color: #E4E8DB;
+  background-color: #27371C;
 }
 
 .mobileNavUl{
@@ -163,11 +168,15 @@ a:hover {
   margin: auto 2rem;
 }
 
+.logo {
+  height: 2rem;
+}
+
 
 /* Footer Things */
 
 footer {
-  background-color: #222222;
+  background-color: #27371C;
   display: flex;
   justify-content: space-between;
   height: 3rem;
@@ -178,7 +187,7 @@ footer {
   font-weight: 200;
   display: flex;
   justify-content: start;
-  padding-left: 3rem;
+  padding-left: 1rem;
   margin: 0;
 }
 
@@ -186,7 +195,7 @@ footer {
   display: flex;
   justify-content: flex-end;
   margin: 0;
-  padding-right: 3.5rem;
+  padding-right: 1rem;
 }
 
 .footerNavSocial li {
@@ -198,7 +207,7 @@ footer {
 
 main {
   width: 94%;
-  margin: 1% 3% 0% 3%;
+  margin: 0% 3%;
   display: block;
 }
 
@@ -209,7 +218,7 @@ main {
 
 .displayLinks{
   clear: left;
-  margin-right: 1rem;
+  margin: auto;
   width: calc(33.33333% - 1rem);
   display: block;
   position: relative;
@@ -251,7 +260,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 99%;
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -272,22 +281,23 @@ main {
   height: 100%;
   width: 100%;
   background: rgba(255, 255, 255, 0.8);
-  color: red;
+  color: #E4E8DB;
 }
 
 .coverTextTitle {
   padding-top: 60%;
   margin: 0;
   font-size: 2rem;
-  text-transform: uppercase;
-  color: #A61414;
+  color: #27371C;
+  font-family: AlverataBold;
 }
 
 .coverTextSubTitle {
   margin: 0;
   padding: 0.5rem 0;
   font-size: 1.2rem;
-  color: #A61414;
+  color: #27371C;
+  font-family: AlverataBold;
 }
 
 /* Background images for the hover effects */
@@ -319,7 +329,7 @@ main {
 /* About Page */
 
 .about {
-  background-color: #222222;
+  background-color: #27371C;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -349,7 +359,7 @@ main {
 .aboutBtns {
   margin: 1rem;
   background-color: orange;
-  color: white;
+  color: #E4E8DB;
   padding: 0.3rem 2rem;
   border: medium;
   border-radius: 1rem;
@@ -394,7 +404,7 @@ input[type=email], select, textarea {
   display: block;
   margin: 1rem auto;
   background-color: orange;
-  color: white;
+  color: #E4E8DB;
   padding: 1rem 2rem;
   border: none;
   cursor: pointer;
@@ -421,7 +431,7 @@ input[type=email], select, textarea {
 /* Add a background color and some padding around the form */
 .tableContainer {
   border-radius: 0.5rem;
-  background-color: #222222;
+  background-color: #27371C;
   margin: 2rem;
 } 
 
@@ -525,7 +535,13 @@ input[type=email], select, textarea {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 550px) {
+@media screen and (min-width: 1024px) and (max-width: 1150px) {
+  .titleName {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 560px) {
   .displayLinks {
     width: calc(50% - 1rem);
   }
@@ -547,7 +563,7 @@ input[type=email], select, textarea {
   .titleName {
     width: 50%;
     justify-content: start;
-    margin: 0.3rem 2rem;
+    margin: 0.8rem 2rem;
   }
   main {
     margin: 1% 1% 0% 1%;
@@ -596,7 +612,7 @@ input[type=email], select, textarea {
   }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 560px){
   .displayLinks {
     width: 100%;
     margin-right: 0rem;
@@ -621,10 +637,13 @@ input[type=email], select, textarea {
   footer {
     margin-top: 1rem;
   }
+  h1 {
+    font-size: 1.3rem;
+  }
   .titleName {
     width: 70%;
     justify-content: start;
-    margin: 0.3rem 2rem;
+    margin: 1rem;
   }
   .footerNavSocial{
     padding-right: 1rem;
@@ -697,4 +716,13 @@ input[type=email], select, textarea {
   }
 }
 
+
+/* Font Families */
+@font-face { font-family: Alverata; src: url('fonts/Alverata/Alverata.ttf'); }
+@font-face { font-family: AlverataBold; src: url('fonts/Alverata/Alverata-Bold.ttf'); }
+@font-face { font-family: AlverataItalic; src: url('fonts/Alverata/Alverata-Italic.ttf'); }
+
+@font-face { font-family: Helvetica; src: url('fonts/Helvetica/Helvetica.ttf');
+@font-face { font-family: HelveticaBold; src: url('fonts/Helvetica/HelveticaBold.ttf');
+@font-face { font-family: HelveticaLight; src: url('fonts/Helvetica/helvetica-light-587ebe5a59211.ttf');
 
