@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <!-- Div container for all the display panels -->
       <div id="hide">
 
-        <h3 class="contactTitle">
+        <h3 id="fadeOut" class="contactTitle">
           <?php
             if (mail($to, $subject, $body, $headers)) {
                 echo "Message sent successfully! Thanks for getting in touch!";
@@ -330,6 +330,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         
       }
+
+      // Function to hide the div
+      function hideDiv() {
+          var messageDiv = document.getElementById('fadeOut');
+          
+          // Start fading out
+          messageDiv.style.opacity = '0';
+
+          // After the transition, set display to none
+          setTimeout(function() {
+              messageDiv.style.display = 'none'; 
+          }, 500); // Time matches the CSS transition duration
+      }
+
+      // Set timeout to trigger the hide function after 3 seconds
+      setTimeout(hideDiv, 3000); // 3000 milliseconds = 3 seconds
+
     </script>
     
     <!-- 100% privacy-first analytics -->
