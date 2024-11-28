@@ -282,6 +282,24 @@ main {
   opacity: 1;
 }
 
+.coverTextImagePics {
+  z-index: 20;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 99%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.displayLinks:hover .coverTextImagePics{
+  opacity: 1;
+}
+
 .coverText {
   z-index: 21;
   display: block;
@@ -368,9 +386,9 @@ main {
 
 .aboutBtns {
   margin: 1rem;
-  background-color: orange;
-  color: #E4E8DB;
-  padding: 0.3rem 2rem;
+  background-color: #E4E8DB;
+  color: #27371C;
+  padding: 0.7rem 2rem;
   border: medium;
   border-radius: 1rem;
   cursor: pointer;
@@ -378,7 +396,8 @@ main {
 }
 
 .aboutBtns:hover {
-  background-color: orangered;
+  background-color: #000;
+  color: #E4E8DB;
 }
 
 .uppercase {
@@ -413,8 +432,8 @@ input[type=email], select, textarea {
 .submit {
   display: block;
   margin: 1rem auto;
-  background-color: orange;
-  color: #E4E8DB;
+  background-color: #E4E8DB;
+  color: #27371C;
   padding: 1rem 2rem;
   border: none;
   cursor: pointer;
@@ -423,7 +442,8 @@ input[type=email], select, textarea {
 }
 
 .submit:hover {
-  background-color: orangered;
+  background-color: #000;
+  color: #E4E8DB;
 }
 
 .form-row {
@@ -524,6 +544,10 @@ input[type=email], select, textarea {
 }
 
 .lowerDisplayLinks:hover .coverTextImage{
+  opacity: 1;
+}
+
+.lowerDisplayLinks:hover .coverTextImagePics{
   opacity: 1;
 }
 
