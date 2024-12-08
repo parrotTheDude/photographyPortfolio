@@ -330,27 +330,23 @@ main {
 
 /* Background images for the hover effects */
 .wholesome {
-  background-image: url("img/displayImgs/wholesomeOL.jpg");
+  background-image: url("img/displayImgs/wholesomeOL.webp");
 }
 
 .marble {
-  background-image: url("img/displayImgs/marbleOL.jpg");
+  background-image: url("img/displayImgs/marbleOL.webp");
 }
 
 .label {
-  background-image: url("img/displayImgs/labelOL.jpg");
-}
-
-.doors {
-  background-image: url("img/displayImgs/doorsOL.jpg");
+  background-image: url("img/displayImgs/labelOL.webp");
 }
 
 .w7 {
-  background-image: url("img/displayImgs/w7OL.jpg");
+  background-image: url("img/displayImgs/w7OL.webp");
 }
 
 .stitch {
-  background-image: url("img/displayImgs/stitch.jpg");
+  background-image: url("img/displayImgs/stitch.webp");
 }
 
 
@@ -650,6 +646,7 @@ input[type=email], select, textarea {
   .displayLinks {
     width: 100%;
     margin-right: 0rem;
+    min-height: 36.5rem;
   }
   .lowerDisplayLinks {
     width: 100%;
