@@ -222,6 +222,9 @@ main {
   width: 94%;
   margin: 0% 3%;
   display: block;
+}
+
+#homepage {
   min-height: 52rem;
 }
 
@@ -462,7 +465,7 @@ input[type=email], select, textarea {
 .tableContainer {
   border-radius: 0.5rem;
   background-color: #27371C;
-  margin: 2rem;
+  margin: 2rem 0;
 } 
 
 .contactTitle {
@@ -627,7 +630,7 @@ form {
   }
   #aboutImg {
     width: 20rem;
-    height: 20rem;
+    height: 27rem;
     max-height: 50rem;
     border-radius: 20rem;
   }
@@ -707,7 +710,7 @@ form {
   }
   #aboutImg {
     width: 20rem;
-    height: 20rem;
+    height: 27rem;
     border-radius: 20rem;
     padding-top: 1rem;
   }
@@ -735,7 +738,7 @@ form {
   }
 }
 
-@media screen and (max-width: 455px){
+@media screen and (max-width: 560px){
  .aboutBtns {
   display: inline-block;
   margin: 0.6rem;

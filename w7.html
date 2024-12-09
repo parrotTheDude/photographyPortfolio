@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<!-- Important Links -->
 		<meta charset="utf-8">
@@ -11,8 +11,9 @@
 
  		<!--Add favorites icons-->   
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="apple-touch-icon" href="/icons/evieLogo.png"/>
-		<link rel="icon" type="image/x-icon" href="/icons/evieLogo.png"/>
+		<link rel="apple-touch-icon" href="/icons/appleTouch.webp"/>
+		<link rel="icon" type="image/x-icon" href="/icons/favicon.webp"/>
+		<link rel="preload" as="image" href="img/w7/w9-min.webp">
 
 		<!-- Title and Description tags -->
 		<title>W7 | Rebrand</title>
@@ -51,19 +52,19 @@
 	    		<!-- LinkedIn -->
 	    		<li>
 		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
-			  			<img class='icon' src="icons/linkedin.png">
+			  			<img class='icon' alt="LinkedIn Icon" src="icons/linkedin.svg">
 			  		</a>
 		      </li>
 		      <!-- Instagram -->
 		      <li>
-		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-			  			<img class='icon' src="icons/instagram.png">
+		      	<a target="_blank" alt="instagram" href="https://www.instagram.com/bowermandesigns/">
+			  			<img class='icon' alt="Insta Icon" src="icons/insta.svg">
 			  		</a>
 		      </li>
 		      <!-- Email which sends to the contact page -->
 		      <li>
 		      	<a href="/contact.html">
-			  			<img class='icon' src="icons/mail.png">
+			  			<img class='icon' alt="Email Icon" src="icons/email.svg">
 			  		</a>
 		      </li>
 	    	</menu>
@@ -103,17 +104,17 @@
 	      <menu class="mobileNavUlIcon menuFlex">
 	    		<li>
 		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
-			  			<img class='icon bigger' src="icons/linkedin.png">
+			  			<img class='icon' id="bigger" alt="LinkedIn Icon" src="icons/linkedin.svg">
 			  		</a>
 		      </li>
 		      <li>
 		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-			  			<img class='icon bigger' src="icons/instagram.png">
+			  			<img class='icon' id="bigger" alt="Insta Icon" src="icons/insta.svg">
 			  		</a>
 		      </li>
 		      <li>
 		      	<a href="/contact.html">
-			  			<img class='icon bigger' src="icons/mail.png">
+			  			<img class='icon' id="bigger" alt="Email Icon" src="icons/email.svg">
 			  		</a>
 		      </li>
 	    	</menu>
@@ -131,7 +132,11 @@
 				 	</div>
 				 	<div class="rightGraphic">
 				 		<div class="graphicsContainer">
-				 			<img class="graphicsImage" src="img/w7/w9.jpg">
+				 			<img 
+							class="asyncImage graphicsImage"
+							src="img/w7/w9-min.webp" 
+							data-src="img/w7/w9.webp" 
+							alt="W7 opening image">
 				 		</div>
 				 	</div>
 			 	</div>
@@ -139,20 +144,20 @@
 			 	<!-- Display container for the remaining photos -->
 		 		<div class="graphicsDisplay">	
 		 			<div class="extraGraphicsContainer">
-		 				<img class="extraImages" src="img/w7/w3.jpg">
-		 				<img class="extraImages" src="img/w7/w8.jpg">
+		 				<img class="extraImages" alt="W7 Image 2" src="img/w7/w3.webp">
+		 				<img class="extraImages" alt="W7 Image 3" src="img/w7/w8.webp">
 		 			</div>
 		 			<div class="extraGraphicsContainer">
-		 				<img class="extraImages" src="img/w7/w4.jpg">
-		 				<img class="extraImages" src="img/w7/w5.jpg">
+		 				<img class="extraImages" alt="W7 Image 4" src="img/w7/w4.webp">
+		 				<img class="extraImages" alt="W7 Image 5" src="img/w7/w5.webp">
 		 			</div>
 		 			<div class="extraGraphicsContainer">
-		 				<img class="extraImages" src="img/w7/w6.jpg">
-		 				<img class="extraImages" src="img/w7/w7.jpg">
+		 				<img class="extraImages" alt="W7 Image 6" src="img/w7/w6.webp">
+		 				<img class="extraImages" alt="W7 Image 7" src="img/w7/w7.webp">
 		 			</div>
 		 			<div class="extraGraphicsContainer">
-		 				<img class="extraImages" src="img/w7/w1.jpg">
-		 				<img class="extraImages" src="img/w7/w2.jpg">
+		 				<img class="extraImages" alt="W7 Image 8" src="img/w7/w1.webp">
+		 				<img class="extraImages" alt="W7 Image 9" src="img/w7/w2.webp">
 		 			</div>
 		 		</div>
 
@@ -168,7 +173,7 @@
 						<!-- Bottom Layer Img -->
 						<div class="coverImage">
 							<div class="cover">
-								<img class="image" src="img/displayImgs/stitch.jpg">
+								<img class="image" alt="Stitch" src="img/displayImgs/stitch.webp">
 							</div>
 						</div>
 						<!-- Hover over container. Image is displayed as a css background img -->
@@ -181,13 +186,13 @@
 					</div>
 				</a>
 
-				<a href="/marble.html" class="lowerDisplayLinks">
+				<a href="/w7.html" class="lowerDisplayLinks">
 					<!-- Contains all of the things inside -->
 					<div class="displayContentContainer">
 						<!-- Bottom Layer Img -->
 						<div class="coverImage">
 							<div class="cover">
-								<img class="image" src="img/displayImgs/marble.jpg">
+								<img class="image" alt="Marble" src="img/displayImgs/marble.webp">
 							</div>
 						</div>
 						<!-- Hover over container. Image is displayed as a css background img -->
@@ -206,7 +211,7 @@
 						<!-- Bottom Layer Img -->
 						<div class="coverImage">
 							<div class="cover">
-								<img class="image" src="img/displayImgs/label.jpg">
+								<img class="image" alt="LabelLess" src="img/displayImgs/label.webp">
 							</div>
 						</div>
 						<!-- Hover over container. Image is displayed as a css background img -->
@@ -235,17 +240,17 @@
 			<menu class="footerNavSocial">
     		<li>
 	      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/" target="_blank">
-		  			<img class='icon' src="icons/linkedin.png">
+		  			<img class='icon' alt="LinkedIn Icon" src="icons/linkedin.svg">
 		  		</a>
 	      </li>
 	      <li>
 	      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-		  			<img class='icon' src="icons/instagram.png">
+		  			<img class='icon' alt="Instagram Icon" src="icons/insta.svg">
 		  		</a>
 	      </li>
 	      <li>
 	      	<a href="/contact.html">
-		  			<img class='icon' src="icons/mail.png">
+		  			<img class='icon' alt="Email Icon" src="icons/email.svg">
 		  		</a>
 	      </li>
     	</menu>
@@ -267,8 +272,24 @@
 			  	document.getElementById("foot").style.display= "flex";
 			  	changed = false;
 			  }
-			  
 			}
+
+			(() => {
+			  'use strict';
+			  // Page is loaded
+			  const objects = document.getElementsByClassName('asyncImage');  Array.from(objects).map((item) => {
+			    // Start loading image
+			    const img = new Image();
+			    img.src = item.dataset.src;
+			    // Once image is loaded replace the src of the HTML element
+			    img.onload = () => {
+			      item.classList.remove('asyncImage');
+			      return item.nodeName === 'IMG' ? 
+			        item.src = item.dataset.src :        
+			        item.style.backgroundImage = `url(${item.dataset.src})`;
+			    };
+			  });
+			})();
 		</script>
 		
 		<!-- 100% privacy-first analytics -->

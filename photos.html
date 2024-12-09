@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<!-- Important Links -->
 		<meta charset="utf-8">
@@ -11,8 +11,9 @@
 
  		<!--Add favorites icons-->   
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="apple-touch-icon" href="/icons/evieLogo.png"/>
-		<link rel="icon" type="image/x-icon" href="/icons/evieLogo.png"/>
+		<link rel="apple-touch-icon" href="/icons/appleTouch.webp"/>
+		<link rel="icon" type="image/x-icon" href="/icons/favicon.webp"/>
+		<link rel="preload" as="image" href="img/pets/p4-min.webp">
 
 		<!-- Title and Description tags -->
 		<title>Photos | Graphic Design and Photography Specialist</title>
@@ -51,19 +52,19 @@
 	    		<!-- LinkedIn -->
 	    		<li>
 		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
-			  			<img class='icon' src="icons/linkedin.png">
+			  			<img class='icon' alt="LinkedIn Icon" src="icons/linkedin.svg">
 			  		</a>
 		      </li>
 		      <!-- Instagram -->
 		      <li>
-		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-			  			<img class='icon' src="icons/instagram.png">
+		      	<a target="_blank" alt="instagram" href="https://www.instagram.com/bowermandesigns/">
+			  			<img class='icon' alt="Insta Icon" src="icons/insta.svg">
 			  		</a>
 		      </li>
 		      <!-- Email which sends to the contact page -->
 		      <li>
 		      	<a href="/contact.html">
-			  			<img class='icon' src="icons/mail.png">
+			  			<img class='icon' alt="Email Icon" src="icons/email.svg">
 			  		</a>
 		      </li>
 	    	</menu>
@@ -103,17 +104,17 @@
 	      <menu class="mobileNavUlIcon menuFlex">
 	    		<li>
 		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
-			  			<img class='icon bigger' src="icons/linkedin.png">
+			  			<img class='icon' id="bigger" alt="LinkedIn Icon" src="icons/linkedin.svg">
 			  		</a>
 		      </li>
 		      <li>
 		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-			  			<img class='icon bigger' src="icons/instagram.png">
+			  			<img class='icon' id="bigger" alt="Insta Icon" src="icons/insta.svg">
 			  		</a>
 		      </li>
 		      <li>
 		      	<a href="/contact.html">
-			  			<img class='icon bigger' src="icons/mail.png">
+			  			<img class='icon' id="bigger" alt="Email Icon" src="icons/email.svg">
 			  		</a>
 		      </li>
 	    	</menu>
@@ -130,7 +131,12 @@
 							<!-- Bottom Layer Img -->
 							<div class="coverImage">
 								<div class="cover">
-									<img class="image" src="img/pets/p4.jpg">
+									<img 
+									class="asyncImage image"
+									src="img/pets/p4-min.webp" 
+									data-src="img/pets/p4.webp" 
+									alt="Pets Cover Image">
+								</div>
 								</div>
 							</div>
 							<!-- Hover over container. Image is displayed as a css background img -->
@@ -150,7 +156,7 @@
 							<!-- Bottom Layer Img -->
 							<div class="coverImage">
 								<div class="cover">
-									<img class="image" src="img/motion/m4.jpg">
+									<img class="image" src="img/motion/m4.webp" alt="Motion Cover">
 								</div>
 							</div>
 							<!-- Hover over container. Image is displayed as a css background img -->
@@ -170,7 +176,7 @@
 							<!-- Bottom Layer Img -->
 							<div class="coverImage">
 								<div class="cover">
-									<img class="image" src="img/wildlife/wildlife1.jpg">
+									<img class="image" src="img/wildlife/wildlife1.webp" alt="Wildlife Cover">
 								</div>
 							</div>
 							<!-- Hover over container. Image is displayed as a css background img -->
@@ -200,17 +206,17 @@
 			<menu class="footerNavSocial">
     		<li>
 	      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/" target="_blank">
-		  			<img class='icon' src="icons/linkedin.png">
+		  			<img class='icon' alt="LinkedIn Icon" src="icons/linkedin.svg">
 		  		</a>
 	      </li>
 	      <li>
 	      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-		  			<img class='icon' src="icons/instagram.png">
+		  			<img class='icon' alt="Instagram Icon" src="icons/insta.svg">
 		  		</a>
 	      </li>
 	      <li>
 	      	<a href="/contact.html">
-		  			<img class='icon' src="icons/mail.png">
+		  			<img class='icon' alt="Email Icon" src="icons/email.svg">
 		  		</a>
 	      </li>
     	</menu>
@@ -232,8 +238,24 @@
 			  	document.getElementById("foot").style.display= "flex";
 			  	changed = false;
 			  }
-			  
 			}
+
+			(() => {
+			  'use strict';
+			  // Page is loaded
+			  const objects = document.getElementsByClassName('asyncImage');  Array.from(objects).map((item) => {
+			    // Start loading image
+			    const img = new Image();
+			    img.src = item.dataset.src;
+			    // Once image is loaded replace the src of the HTML element
+			    img.onload = () => {
+			      item.classList.remove('asyncImage');
+			      return item.nodeName === 'IMG' ? 
+			        item.src = item.dataset.src :        
+			        item.style.backgroundImage = `url(${item.dataset.src})`;
+			    };
+			  });
+			})();
 		</script>
 		
 		<!-- 100% privacy-first analytics -->
