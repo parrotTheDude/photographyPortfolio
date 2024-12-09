@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<!-- Important Links -->
 		<meta charset="utf-8">
@@ -11,8 +11,9 @@
 
  		<!--Add favorites icons-->   
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="apple-touch-icon" href="/icons/evieLogo.png"/>
-		<link rel="icon" type="image/x-icon" href="/icons/evieLogo.png"/>
+		<link rel="apple-touch-icon" href="/icons/appleTouch.webp"/>
+		<link rel="icon" type="image/x-icon" href="/icons/favicon.webp"/>
+		<link rel="preload" as="image" href="img/displayImgs/stitchOL-min.webp">
 
 		<!-- Title and Description tags -->
 		<title>Contact | Graphic Design and Photography Specialist</title>
@@ -51,19 +52,19 @@
 	    		<!-- LinkedIn -->
 	    		<li>
 		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
-			  			<img class='icon' src="icons/linkedin.png">
+			  			<img class='icon' alt="LinkedIn Icon" src="icons/linkedin.svg">
 			  		</a>
 		      </li>
 		      <!-- Instagram -->
 		      <li>
-		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-			  			<img class='icon' src="icons/instagram.png">
+		      	<a target="_blank" alt="instagram" href="https://www.instagram.com/bowermandesigns/">
+			  			<img class='icon' alt="Insta Icon" src="icons/insta.svg">
 			  		</a>
 		      </li>
 		      <!-- Email which sends to the contact page -->
 		      <li>
 		      	<a href="/contact.html">
-			  			<img class='icon' src="icons/mail.png">
+			  			<img class='icon' alt="Email Icon" src="icons/email.svg">
 			  		</a>
 		      </li>
 	    	</menu>
@@ -103,17 +104,17 @@
 	      <menu class="mobileNavUlIcon menuFlex">
 	    		<li>
 		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/">
-			  			<img class='icon bigger' src="icons/linkedin.png">
+			  			<img class='icon' id="bigger" alt="LinkedIn Icon" src="icons/linkedin.svg">
 			  		</a>
 		      </li>
 		      <li>
 		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-			  			<img class='icon bigger' src="icons/instagram.png">
+			  			<img class='icon' id="bigger" alt="Insta Icon" src="icons/insta.svg">
 			  		</a>
 		      </li>
 		      <li>
 		      	<a href="/contact.html">
-			  			<img class='icon bigger' src="icons/mail.png">
+			  			<img class='icon' id="bigger" alt="Email Icon" src="icons/email.svg">
 			  		</a>
 		      </li>
 	    	</menu>
@@ -124,27 +125,37 @@
 
     		<!-- Contact form -->
     		 <div class="tableContainer">
-    		 		<h3 class="contactTitle">Get in touch now!</h3>
-
+    		 		<div class="text-center">
+			        <h1 class="contactTitle">
+			          Contact me today!
+			        </h1>
+			        <p>
+			          Fill out the form below to send your message.
+			        </p>
+			      </div>
     		 		<div class="main-contact-form">
-						  <form id="contact-form" method="POST" action="sendmail.php">
+						  <form action="https://api.web3forms.com/submit" method="POST" id="form">
+			          <input type="hidden" name="access_key" value="9a219e03-db22-4ae5-8d58-d198339642a4" />
+			          <input type="hidden" name="subject" value="Web enquiry from eviebowerman.com" />
+			          <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
 							  <div class="form-row form-error" style="display:none;"></div>
 							  <div class="form-row">
-							    <label for="contact-form-name">Name:</label>
-							    <input id="contact-form-name" class="form-input" type="text" name="name" required>
+							    <label for="name">Name:</label>
+							    <input id="name" class="form-input" type="text" name="name" placeholder="John Doe" required>
 							  </div>
 							  <div class="form-row">
-							    <label for="contact-form-email">Email:</label>
-							    <input id="contact-form-email" class="form-input" type="email" name="email" required>
+							    <label for="email">Email:</label>
+							    <input id="email" class="form-input" type="email" name="email" placeholder="you@company.com" required>
 							  </div>
 							  <div class="form-row">
-							    <label for="contact-form-message">Message:</label>
-							    <textarea id="contact-form-message" class="form-input" name="message" required></textarea>
+							    <label for="message">Message:</label>
+							    <textarea id="cmessage" class="form-input message" name="message" placeholder="Your message..." required></textarea>
 							  </div>
-							  <button class="submit" type="submit">Submit</button>
+							  <button class="submit" type="submit">Send Message</button>
+							  <p class="text-base text-center text-gray-400" id="result"></p>
 							</form>
     		 		</div>
-
 				</div> 
 			</div>
 		</main>
@@ -162,17 +173,17 @@
 			<menu class="footerNavSocial">
     		<li>
 	      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/" target="_blank">
-		  			<img class='icon' src="icons/linkedin.png">
+		  			<img class='icon' alt="LinkedIn Icon" src="icons/linkedin.svg">
 		  		</a>
 	      </li>
 	      <li>
 	      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-		  			<img class='icon' src="icons/instagram.png">
+		  			<img class='icon' alt="Instagram Icon" src="icons/insta.svg">
 		  		</a>
 	      </li>
 	      <li>
 	      	<a href="/contact.html">
-		  			<img class='icon' src="icons/mail.png">
+		  			<img class='icon' alt="Email Icon" src="icons/email.svg">
 		  		</a>
 	      </li>
     	</menu>
@@ -197,57 +208,52 @@
 			  
 			}
 
-			document.getElementById("contact-form").addEventListener("submit", (event) => {
-			  const contactForm = event.target
-			  if (!validateContactForm(contactForm)) {
-			    event.preventDefault();
-			    displayError(contactForm, 'Is your email correct?')
-			  }
+			const form = document.getElementById("form");
+			const result = document.getElementById("result");
+
+			form.addEventListener("submit", function (e) {
+			  const formData = new FormData(form);
+			  e.preventDefault();
+			  var object = {};
+			  formData.forEach((value, key) => {
+			    object[key] = value;
+			  });
+			  var json = JSON.stringify(object);
+			  result.innerHTML = "Please wait...";
+
+			  fetch("https://api.web3forms.com/submit", {
+			    method: "POST",
+			    headers: {
+			      "Content-Type": "application/json",
+			      Accept: "application/json"
+			    },
+			    body: json
+			  })
+			    .then(async (response) => {
+			      let json = await response.json();
+			      if (response.status == 200) {
+			        result.innerHTML = json.message;
+			        result.classList.remove("text-gray-500");
+			        result.classList.add("text-green-500");
+			      } else {
+			        console.log(response);
+			        result.innerHTML = json.message;
+			        result.classList.remove("text-gray-500");
+			        result.classList.add("text-red-500");
+			      }
+			    })
+			    .catch((error) => {
+			      console.log(error);
+			      result.innerHTML = "Something went wrong!";
+			    })
+			    .then(function () {
+			      form.reset();
+			      setTimeout(() => {
+			        result.style.display = "none";
+			      }, 5000);
+			    });
 			});
 
-			// Function to validate email addresses
-			function isValidEmail(email) {
-			  // Define the JS Regex pattern for a valid email address
-			  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-			  
-			  // Test the email against the pattern and return the result (true or false)
-			  return emailRegex.test(email);
-			}
-
-			// Function to validate the contact form
-			function validateContactForm(contactForm) {
-			  // Get the values entered in the form fields
-			  const name = contactForm["name"].value;
-			  const email = contactForm["email"].value;
-			  const message = contactForm["message"].value;
-
-			  // Check if the required fields (name, email, and message) are empty
-			  // If any of them are empty, return false to prevent form submission
-			  if (!name || !email || !message) {
-			    return false;
-			  }
-
-			  // Check if the email is valid using the isValidEmail function
-			  // If the phone field is not empty, also check if it is valid using the isValidPhoneNumber function
-			  // If either the email or the phone number is invalid, return false to prevent form submission
-			  if (!isValidEmail(email)) {
-			    return false;
-			  }
-
-			  // If all the validations pass, return true to allow form submission
-			  return true;
-			}
-
-			// Function to display an error message on the web page
-			function displayError(formElement, message) {
-			  const errorElement = formElement.getElementsByClassName("form-error")[0];
-			  
-			  // Set the innerHTML of the error element to the provided error message
-			  errorElement.innerHTML = message;
-			  
-			  // Change the display style of the error element to "block" to make it visible
-			  errorElement.style.display = "block";
-			}
 		</script>
 		
 		<!-- 100% privacy-first analytics -->
