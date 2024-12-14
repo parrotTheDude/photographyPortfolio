@@ -4,7 +4,7 @@
 		<!-- Important Links -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<base href="https://eviebowerman.com">
+		<!-- <base href="https://eviebowerman.com"> -->
 
 		<!-- Links for style sheets -->
 		<link rel="stylesheet" href="style.css">
@@ -257,71 +257,12 @@
 		</main>
 
 		<!-- Footer area -->
-		<footer>
-			<section class="footContainer">
-				<h3>Evie Bowerman</h3>
-			</section>
-			<section class="socialsContainerFoot">
-				<menu class="footerNavSocial">
-		  		<li>
-		      	<a target="_blank" href="https://www.linkedin.com/in/evie-bowerman-2a56a7232/" target="_blank">
-			  			<img class='icon' alt="LinkedIn Icon" src="icons/linkedin.svg">
-			  		</a>
-		      </li>
-		      <li>
-		      	<a target="_blank" href="https://www.instagram.com/bowermandesigns/">
-			  			<img class='icon' alt="Instagram Icon" src="icons/insta.svg">
-			  		</a>
-		      </li>
-		      <li>
-		      	<a href="/contact.html">
-			  			<img class='icon' alt="Email Icon" src="icons/email.svg">
-			  		</a>
-		      </li>
-		  	</menu>
-			</section>
-			<aside class="jacobLink">
-				<a target="_blank" href="https://www.jbowerman.com/">
-					<h3 class="footerNote">created by jacob</h3>
-				</a>
-			</aside>
-		</footer>
+		<?php include ('inc/footer.php'); ?>
 		
 
 		<!-- JS Section to make the mobile menu funciton and hide the rest of the content when it is active -->
 		<script>
-			let changed = false;
-			function menuSwitch(x) {
-			  x.classList.toggle('change');
-			  if (changed === false) {
-			  	document.getElementById("menuToggle").style.display= "block";
-			  	document.getElementById("hide").style.display= "none";
-			  	document.getElementById("foot").style.display= "none";
-			  	changed = true;
-			  } else  {
-			  	document.getElementById("menuToggle").style.display= "none";
-			  	document.getElementById("hide").style.display= "block";
-			  	document.getElementById("foot").style.display= "flex";
-			  	changed = false;
-			  }
-			}
-
-			(() => {
-			  'use strict';
-			  // Page is loaded
-			  const objects = document.getElementsByClassName('asyncImage');  Array.from(objects).map((item) => {
-			    // Start loading image
-			    const img = new Image();
-			    img.src = item.dataset.src;
-			    // Once image is loaded replace the src of the HTML element
-			    img.onload = () => {
-			      item.classList.remove('asyncImage');
-			      return item.nodeName === 'IMG' ? 
-			        item.src = item.dataset.src :        
-			        item.style.backgroundImage = `url(${item.dataset.src})`;
-			    };
-			  });
-			})();
+			<?php include ('inc/coreJs.php'); ?>
 		</script>
 		
 		<!-- 100% privacy-first analytics -->

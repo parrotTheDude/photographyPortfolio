@@ -191,8 +191,16 @@ a:hover {
 footer {
   background-color: #27371C;
   display: flex;
-  justify-content: space-between;
-  height: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.footContainer {
+  display: inherit;
+  justify-content: center;
+  width: 70%;
+  border-top: 1px white solid;
 }
 
 .footerNote {
@@ -200,7 +208,8 @@ footer {
   font-weight: 200;
   display: flex;
   justify-content: start;
-  padding-left: 1rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
   margin: 0;
 }
 
@@ -208,11 +217,17 @@ footer {
   display: flex;
   justify-content: flex-end;
   margin: 0;
-  padding-right: 1rem;
+  padding: 1rem;
 }
 
 .footerNavSocial li {
   margin: 0rem 1rem;
+}
+
+.jacobLink {
+  display: inherit;
+  justify-content: center;
+  width: 70%;
 }
 
 
@@ -568,6 +583,11 @@ form {
   margin-bottom: 2rem;
 }
 
+.socialsContainerFoot {
+  display: inherit;
+  justify-content: center;
+  width: 70%;
+}
 
 /* Media Queries */
 
