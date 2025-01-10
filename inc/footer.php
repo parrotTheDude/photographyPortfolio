@@ -22,8 +22,8 @@
   	</menu>
 	</section>
 	<aside class="jacobLink">
-		<a target="_blank" href="https://www.jbowerman.com/">
-			<h3 class="footerNote">created by jacob</h3>
-		</a>
+		<a target="_blank" href="https://www.bowermandigital.com/">
+				<p class="footerNote">Built, designed and optimised by Bowerman Digital</p>
+			</a>
 	</aside>
 </footer>
