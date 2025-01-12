@@ -24,7 +24,7 @@
         $client = new PostmarkClient($postmarkToken);
 
         $fromEmail = "hello@bowermandigital.com";
-        $toEmail = "hello@jbowerman.com";
+        $toEmail = "eviebowerman@proton.me";
         $subject = $name . " wants to get in contact from your website eviebowerman.com";
         $htmlBody = "<strong>Hello!</strong> My name is " . $name . ". <br /><br />Email: " . $email . "<br />Message:<br />" . $message;
         $textBody = "Hello! My name is " . $name  . ".Email: " . $email . "Message:" . $message;;
