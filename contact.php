@@ -1,3 +1,17 @@
+<?php
+	//Start the session
+	session_start();
+
+	//Access your result variables
+	if (isset($_SESSION['result'])) {
+		$result = $_SESSION['result'];
+	} else {
+		$result = '';
+	}
+
+	//Unset the useless session variable
+	unset($_SESSION['result']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,32 +39,33 @@
 			        <h1 class="contactTitle">
 			          Contact me today!
 			        </h1>
-			        <p>
-			          Fill out the form below to send your message.
-			        </p>
+			        <?php 
+								if ($result == "failed") { 
+									echo "<p>Something went wrong! Your message was not sent.";
+								} elseif ($result == "sent") {
+									echo "<p>Your message was sent!</p><p>Thanks for getting in touch.";
+								} else {
+									echo "<p>Fill out the form below!</p>";
+								}
+							?>
 			      </div>
     		 		<div class="main-contact-form">
-						  <form action="https://api.web3forms.com/submit" method="POST" id="form">
-			          <input type="hidden" name="access_key" value="63521d7d-8a5d-47cd-904a-f98c2589dbc2" />
-			          <input type="hidden" name="subject" value="Web enquiry from eviebowerman.com" />
-			          <input type="checkbox" name="botcheck" id="" style="display: none;" />
-
-							  <div class="form-row form-error" style="display:none;"></div>
-							  <div class="form-row">
-							    <label for="name">Name:</label>
-							    <input id="name" class="form-input" type="text" name="name" placeholder="John Doe" required>
-							  </div>
-							  <div class="form-row">
-							    <label for="email">Email:</label>
-							    <input id="email" class="form-input" type="email" name="email" placeholder="you@company.com" required>
-							  </div>
-							  <div class="form-row">
-							    <label for="message">Message:</label>
-							    <textarea id="cmessage" class="form-input message" name="message" placeholder="Your message..." required></textarea>
-							  </div>
-							  <button class="submit" type="submit">Send Message</button>
-							  <p class="text-base text-center text-gray-400" id="result"></p>
-							</form>
+						  <form action="sendmail" method="POST" id="form" class="formStyle">
+			      		<div class="formInputContainer">
+			          	<input type="text" name="name" id="name" placeholder="John Smith" required class="form-input" />
+			          </div>
+			          <div class="formInputContainer">
+			          	<input type="email" name="email" id="email" placeholder="you@company.com" required class="form-input" />
+			          </div>
+			          <div class="formInputContainer">
+			            <textarea rows="5" name="message" id="message" form="form" placeholder="Your Message" class="form-input message" required></textarea>
+			          </div>
+			          <div class="formBtnContainer">
+			            <button type="submit" name="submit" id="formBtn" class="submitBtn">
+			              Send Message
+			            </button>
+			          </div>
+			        </form>
     		 		</div>
 				</div> 
 			</div>

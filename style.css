@@ -783,6 +783,41 @@ form {
   }
 }
 
+.formStyle {
+  width: 100%;
+  display: block;
+}
+
+.formInputContainer {
+  margin: 1rem;
+}
+
+.formInput {
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 25rem;
+}
+
+.formInputMsg {
+  width: 25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.submitBtn {
+  padding: 1rem;
+  margin-left: 1.5rem;
+}
+
+@media screen and (max-width: 650px) { 
+  .formInput {
+    width: 100%;
+  }
+  .formInputMsg {
+    width: 100%;
+  }
+}
+
 
 /* Font Families */
 @font-face { font-family: Alverata; src: url('fonts/Alverata/Alverata.ttf'); 
