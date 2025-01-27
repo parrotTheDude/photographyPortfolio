@@ -22,7 +22,7 @@
 	    		<div class="leftGraphic">
 				 		<div class="graphicsDetails">
 				 			<h3 class="graphicsDetailsTitle">Wholesome Harvest</h3>
-				 			<p class="graphicsDetailsPara">The brief asks to produce Wholesome Harvest a logo and packaging design, including their Halloween special, the pumpkin soup. The breif stated extras could be added of our choice. Therefore, I decided to add social media templates and a billboard. I find with the extra elements it tells more of the brand story. I chose to go down the route where soups makes people feel nostalgic and comforted.</p>
+				 			<p class="graphicsDetailsPara">Wholesome Harvest were looking for a logo and packaging design, including their Halloween special, pumpkin soup. It also mentioned that we could add extra elements, so I decided to include social media templates and a billboard. I felt these additions would help tell the brand’s story more fully. For the concept, I focused on the idea of soups evoking a sense of nostalgia and comfort. To capture that warm, homely vibe, I created a hand-drawn logo, and selected typefaces that complement the retro, homemade feel of the brand.</p>
 				 			<h3 class="graphicsDetailsTag">Scroll to see more...</h3>
 				 		</div>
 				 	</div>
