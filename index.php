@@ -20,6 +20,26 @@
     	<div id="hide">
 				<div class="displayCovers">
 
+					<!-- New Display-->
+					<a href="https://eviebowerman.com/stump-cross-caverns" class="displayLinks">
+						<!-- Contains all of the things inside -->
+						<div class="displayContentContainer">
+							<!-- Bottom Layer Img -->
+							<div class="coverImage">
+								<div class="cover">
+									<img class="image" src="img/displayImgs/sxcOL.webp" alt="Stump Cross Caverns">
+								</div>
+							</div>
+							<!-- Hover over container. Image is displayed as a css background img -->
+							<div class="coverTextImage sxc">
+								<div class="coverText">
+									<h3 class="coverTextTitle">Stump Cross Caverns</h3>
+									<h5 class="coverTextSubTitle">2025</h5>
+								</div>
+							</div>
+						</div>
+					</a>
+
 					<!-- First Display Panel. Link to the page is the first <a>-->
 					<a href="https://eviebowerman.com/stitch" class="displayLinks">
 						<!-- Contains all of the things inside -->
