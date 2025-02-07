@@ -20,26 +20,6 @@
     	<div id="hide">
 				<div class="displayCovers">
 
-					<!-- New Display-->
-					<a href="https://eviebowerman.com/stump-cross-caverns" class="displayLinks">
-						<!-- Contains all of the things inside -->
-						<div class="displayContentContainer">
-							<!-- Bottom Layer Img -->
-							<div class="coverImage">
-								<div class="cover">
-									<img class="image" src="img/displayImgs/sxcOL.webp" alt="Stump Cross Caverns">
-								</div>
-							</div>
-							<!-- Hover over container. Image is displayed as a css background img -->
-							<div class="coverTextImage sxc">
-								<div class="coverText">
-									<h3 class="coverTextTitle">Stump Cross Caverns</h3>
-									<h5 class="coverTextSubTitle">2025</h5>
-								</div>
-							</div>
-						</div>
-					</a>
-
 					<!-- First Display Panel. Link to the page is the first <a>-->
 					<a href="https://eviebowerman.com/stitch" class="displayLinks">
 						<!-- Contains all of the things inside -->
@@ -64,21 +44,20 @@
 						</div>
 					</a>
 					
-
-					<!-- Second Display Panel -->
-					<a href="https://eviebowerman.com/marble" class="displayLinks">
+					<!-- Fifth Display Panel -->
+					<a href="https://eviebowerman.com/wholesomeHarvest" class="displayLinks">
 						<!-- Contains all of the things inside -->
 						<div class="displayContentContainer">
 							<!-- Bottom Layer Img -->
 							<div class="coverImage">
 								<div class="cover">
-									<img class="image" src="img/displayImgs/marble.webp" alt="Marble Blue">
+									<img class="image" src="img/displayImgs/wholesome.webp" alt="Wholesome Harvest">
 								</div>
 							</div>
 							<!-- Hover over container. Image is displayed as a css background img -->
-							<div class="coverTextImage marble">
+							<div class="coverTextImage wholesome">
 								<div class="coverText">
-									<h3 class="coverTextTitle">Marble Blue</h3>
+									<h3 class="coverTextTitle">Wholesome Harvest</h3>
 									<h5 class="coverTextSubTitle">2024</h5>
 								</div>
 							</div>
@@ -104,7 +83,26 @@
 							</div>
 						</div>
 					</a>
-					
+
+					<!-- Second Display Panel -->
+					<a href="https://eviebowerman.com/marble" class="displayLinks">
+						<!-- Contains all of the things inside -->
+						<div class="displayContentContainer">
+							<!-- Bottom Layer Img -->
+							<div class="coverImage">
+								<div class="cover">
+									<img class="image" src="img/displayImgs/marble.webp" alt="Marble Blue">
+								</div>
+							</div>
+							<!-- Hover over container. Image is displayed as a css background img -->
+							<div class="coverTextImage marble">
+								<div class="coverText">
+									<h3 class="coverTextTitle">Marble Blue</h3>
+									<h5 class="coverTextSubTitle">2024</h5>
+								</div>
+							</div>
+						</div>
+					</a>
 
 					<!-- Forth Display Panel -->
 					<a href="https://eviebowerman.com/label" class="displayLinks">
@@ -125,28 +123,26 @@
 							</div>
 						</div>
 					</a>
-					
 
-					<!-- Fifth Display Panel -->
-					<a href="https://eviebowerman.com/wholesomeHarvest" class="displayLinks">
+					<!-- New Display-->
+					<a href="https://eviebowerman.com/stump-cross-caverns" class="displayLinks">
 						<!-- Contains all of the things inside -->
 						<div class="displayContentContainer">
 							<!-- Bottom Layer Img -->
 							<div class="coverImage">
 								<div class="cover">
-									<img class="image" src="img/displayImgs/wholesome.webp" alt="Wholesome Harvest">
+									<img class="image" src="img/displayImgs/sxcOL.webp" alt="Stump Cross Caverns">
 								</div>
 							</div>
 							<!-- Hover over container. Image is displayed as a css background img -->
-							<div class="coverTextImage wholesome">
+							<div class="coverTextImage sxc">
 								<div class="coverText">
-									<h3 class="coverTextTitle">Wholesome Harvest</h3>
-									<h5 class="coverTextSubTitle">2024</h5>
+									<h3 class="coverTextTitle">Stump Cross Caverns</h3>
+									<h5 class="coverTextSubTitle">2025</h5>
 								</div>
 							</div>
 						</div>
 					</a>
-					
 
 					<!-- Sixth and final Display Panel -->
 					<a href="https://eviebowerman.com/doors" class="displayLinks">

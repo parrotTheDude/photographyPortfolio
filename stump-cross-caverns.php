@@ -31,7 +31,7 @@
 				 		<div class="graphicsContainer">
 				 			<img 
 							class="asyncImage graphicsImage"
-							src="img/sxc/sx1.webp" 
+							src="img/sxc/sx3.webp" 
 							alt="SXC opening image">
 				 		</div>
 				 	</div>
@@ -52,7 +52,7 @@
 		 				<img class="extraImages" alt="Stump Cross Image 7" src="img/sxc/sx8.webp">
 		 			</div>
 		 			<div class="extraGraphicsContainer">
-		 				<img class="extraImages" alt="Stump Cross Image 8" src="img/sxc/sx3.webp">
+		 				<img class="extraImages" alt="Stump Cross Image 8" src="img/sxc/sx1.webp">
 		 			</div>
 		 		</div>
 
