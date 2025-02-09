@@ -38,7 +38,7 @@
 		      </li>
 		      <!-- Email which sends to the contact page -->
 		      <li>
-		      	<a href="https://eviebowerman.com//contact">
+		      	<a href="https://eviebowerman.com/contact">
 			  			<img class='icon' alt="Email Icon" src="icons/email.svg">
 			  		</a>
 		      </li>
