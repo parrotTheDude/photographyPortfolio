@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+  --font-sans: 'Alverata', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+               'Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/Alverata/Alverata.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/Alverata/Alverata-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/Alverata/Alverata-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+body { font-family: 'Alverata', ui-sans-serif, system-ui, sans-serif; }
+
+/* Your animation */
+@keyframes fade-in-up { 0% {opacity:0; transform: translateY(20px)} 100% {opacity:1; transform: translateY(0)} }
+.animate-fade-in-up { animation: fade-in-up .8s ease-out both }
