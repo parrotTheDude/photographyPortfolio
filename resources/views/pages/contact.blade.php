@@ -50,10 +50,25 @@
               class="inline-flex items-center justify-center px-6 py-3 bg-[#f0b46d] text-[#1b2421] hover:brightness-110 transition">
         Send Message
       </button>
+      <p class="text-xs text-gray-400 pt-4">
+        This site is protected by reCAPTCHA and the 
+        <a href="https://policies.google.com/privacy" target="_blank" class="underline hover:text-[#f0b46d]">Google Privacy Policy</a> 
+        and 
+        <a href="https://policies.google.com/terms" target="_blank" class="underline hover:text-[#f0b46d]">Terms of Service</a> 
+        apply.
+      </p>
     </div>
   </form>
 </section>
 @endsection
+
+@push('head')
+<style>
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+</style>
+@endpush
 
 @push('scripts')
 <script>

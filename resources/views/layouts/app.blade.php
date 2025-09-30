@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" class="bg-[#0f1714]">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Evie Bowerman')</title>
-    @vite(['resources/css/app.css','resources/js/app.js'])
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{-- Title + Meta --}}
+  <title>@yield('title', 'Evie Bowerman')</title>
+  <meta name="description" content="@yield('meta_description', 'Graphic design & photography by Evie Bowerman')">
+  <link rel="canonical" href="{{ url()->current() }}">
+
+  {{-- Favicons / PWA --}}
+
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.webp') }}">
+  <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+  <meta name="theme-color" content="#0f1714">
+
+  {{-- Open Graph / Twitter --}}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@yield('og_title', 'Evie Bowerman')">
+  <meta property="og:description" content="@yield('og_description', 'Graphic design & photography by Evie Bowerman')">
+  <meta property="og:image" content="@yield('og_image', asset('images/displayImgs/stitchOL.webp'))">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@yield('twitter_title', 'Evie Bowerman')">
+  <meta name="twitter:description" content="@yield('twitter_description', 'Graphic design & photography by Evie Bowerman')">
+  <meta name="twitter:image" content="@yield('twitter_image', asset('images/displayImgs/stitchOL.webp'))">
+
+  {{-- CSRF --}}
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  {{-- Assets --}}
+  @vite(['resources/css/app.css','resources/js/app.js'])
+
+  {{-- Scripts --}}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+  {{-- Allow page-specific extra tags --}}
+  @stack('head')
 </head>
 <body class="text-[#f1f3ee] antialiased">
   {{-- Fixed background layers --}}

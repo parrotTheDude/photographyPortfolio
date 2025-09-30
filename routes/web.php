@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use Spatie\Sitemap\SitemapGenerator;
 
 // Home / portfolio grid
 Route::view('/', 'home')->name('home');
@@ -40,3 +41,9 @@ Route::view('/doors', 'projects.doors')->name('projects.doors');
 Route::view('/wildlife', 'photos.wildlife')->name('photos.wildlife');
 Route::view('/pets',     'photos.pets')->name('photos.pets');
 Route::view('/motion',   'photos.motion')->name('photos.motion');
+
+Route::get('sitemap.xml', function () {
+    return SitemapGenerator::create(config('app.url'))
+        ->getSitemap()
+        ->toResponse(request());
+});
