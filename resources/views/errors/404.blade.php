@@ -33,7 +33,7 @@
       <p class="lead">Sorry, we couldn’t find the page you’re looking for.</p>
       <div class="actions">
         <a class="btn" href="{{ url('/') }}">Back to Home</a>
-        <a class="link" href="mailto:{{ env('CONTACT_TO','hello@bowermandigital.com') }}">Report this</a>
+        <a class="link" href="mailto:{{ config('services.contact.to') }}">Report this</a>
       </div>
     </div>
   </div>

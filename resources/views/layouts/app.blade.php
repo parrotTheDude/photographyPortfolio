@@ -13,7 +13,7 @@
 
   <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.webp') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('appleTouch.webp') }}">
   <link rel="manifest" href="{{ asset('site.webmanifest') }}">
   <meta name="theme-color" content="#0f1714">
 
@@ -54,8 +54,6 @@
 
         {{-- GLASSY FIXED HEADER (transparent until scrolled) --}}
         <header
-        x-data="{ scrolled:false }"
-        x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 8)"
         class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
         :class="scrolled
             ? 'bg-[#0f1714]/65 backdrop-blur-xl shadow-[0_6px_24px_rgba(0,0,0,0.35)] border-b border-white/10'
@@ -183,6 +181,6 @@
       </div>
     </div>
   </div>
-</body>
 @stack('scripts')
+</body>
 </html>

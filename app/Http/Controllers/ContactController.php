@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Postmark\PostmarkClient;
@@ -15,21 +15,13 @@ class ContactController extends Controller
         return view('pages.contact');
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        // Validate input
-        $validated = $request->validate([
-            'name'    => ['required','string','max:100','regex:/^[a-zA-Z\s\-\']+$/'],
-            'email'   => ['required','email','max:255'],
-            'message' => ['required','string','max:5000'],
-            'g-recaptcha-response' => ['required'],
-        ]);
-
         // Verify Google reCAPTCHA
         $captcha = Http::asForm()->post(
             'https://www.google.com/recaptcha/api/siteverify',
             [
-                'secret'   => env('RECAPTCHA_SECRET_KEY'),
+                'secret'   => config('services.recaptcha.secret_key'),
                 'response' => $request->input('g-recaptcha-response'),
                 'remoteip' => $request->ip(),
             ]
@@ -42,21 +34,24 @@ class ContactController extends Controller
         }
 
         try {
-            // Postmark send
-            $client  = new PostmarkClient(env('POSTMARK_TOKEN'));
+            $client   = new PostmarkClient(config('services.postmark.token'));
 
-            $from    = env('MAIL_FROM_ADDRESS');
-            $fromName= env('MAIL_FROM_NAME', 'Website');
-            $to      = env('CONTACT_TO');
-            $stream  = env('CPOSTMARK_STREAM');
+            $from     = config('services.contact.from_address');
+            $fromName = config('services.contact.from_name');
+            $to       = config('services.contact.to');
+            $stream   = config('services.postmark.stream');
 
-            $subject = "{$validated['name']} contacted you from eviebowerman.com";
-            $html    = "<strong>Hello!</strong> My name is {$validated['name']}<br><br>"
-                     . "Email: {$validated['email']}<br><br>"
-                     . nl2br(e($validated['message']));
-            $text    = "Hello! My name is {$validated['name']}\n"
-                     . "Email: {$validated['email']}\n\n"
-                     . $validated['message'];
+            $name    = e($request->validated('name'));
+            $email   = e($request->validated('email'));
+            $message = $request->validated('message');
+
+            $subject = "{$name} contacted you from eviebowerman.com";
+            $html    = "<strong>Hello!</strong> My name is {$name}<br><br>"
+                     . "Email: {$email}<br><br>"
+                     . nl2br(e($message));
+            $text    = "Hello! My name is {$name}\n"
+                     . "Email: {$email}\n\n"
+                     . $message;
 
             $client->sendEmail(
                 "{$fromName} <{$from}>",
@@ -72,10 +67,9 @@ class ContactController extends Controller
                 $stream
             );
 
-            return back()->with('success', '✅ Thank you! Your message has been sent.');
+            return back()->with('success', 'Thank you! Your message has been sent.');
 
         } catch (Exception $e) {
-            // Log for debugging
             Log::error('Contact form Postmark error: '.$e->getMessage());
 
             return back()

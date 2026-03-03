@@ -15,8 +15,21 @@ return [
     */
 
     'postmark' => [
-        'token' => env('POSTMARK_TOKEN'),
-        'from'  => env('POSTMARK_FROM'),
+        'token'  => env('POSTMARK_TOKEN'),
+        'from'   => env('POSTMARK_FROM'),
+        'stream' => env('POSTMARK_STREAM', 'outbound'),
+    ],
+
+    'contact' => [
+        'to'        => env('CONTACT_TO', 'hello@bowermandigital.com'),
+        'from_name' => env('MAIL_FROM_NAME', 'Website'),
+        'from_address' => env('MAIL_FROM_ADDRESS', 'hello@bowermandigital.com'),
+    ],
+
+    'recaptcha' => [
+        'site_key'   => env('RECAPTCHA_SITE_KEY'),
+        'secret_key' => env('RECAPTCHA_SECRET_KEY'),
+        'min_score'  => env('RECAPTCHA_MIN_SCORE', 0.5),
     ],
 
     'resend' => [

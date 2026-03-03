@@ -77,7 +77,7 @@
 
   function onRecaptchaLoaded() {
     recapWidget = grecaptcha.render('recaptcha-container', {
-      sitekey: "{{ env('RECAPTCHA_SITE_KEY') }}",
+      sitekey: "{{ config('services.recaptcha.site_key') }}",
       size: 'invisible',
       badge: 'bottomright',
       callback: onRecaptchaSuccess,
