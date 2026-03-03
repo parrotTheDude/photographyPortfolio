@@ -47,8 +47,12 @@
 
     <div class="pt-4">
       <button id="contactSubmit" type="button"
-              class="inline-flex items-center justify-center px-6 py-3 bg-[#f0b46d] text-[#1b2421] hover:brightness-110 transition">
-        Send Message
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#f0b46d] text-[#1b2421] hover:brightness-110 transition min-w-[10rem]">
+        <svg id="contactSpinner" class="hidden animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+        </svg>
+        <span id="contactBtnText">Send Message</span>
       </button>
       <p class="text-xs text-gray-400 pt-4">
         This site is protected by reCAPTCHA and the 
@@ -96,8 +100,16 @@
       if (submitting) return;
       submitting = true;
       btn.disabled = true;
+      document.getElementById('contactSpinner').classList.remove('hidden');
+      document.getElementById('contactBtnText').textContent = 'Sending...';
       try { grecaptcha.execute(recapWidget); }
-      catch (e) { submitting = false; btn.disabled = false; console.error(e); }
+      catch (e) {
+        submitting = false;
+        btn.disabled = false;
+        document.getElementById('contactSpinner').classList.add('hidden');
+        document.getElementById('contactBtnText').textContent = 'Send Message';
+        console.error(e);
+      }
     });
   }
 
@@ -109,6 +121,8 @@
     submitting = false;
     const btn = document.getElementById('contactSubmit');
     if (btn) btn.disabled = false;
+    document.getElementById('contactSpinner').classList.add('hidden');
+    document.getElementById('contactBtnText').textContent = 'Send Message';
     try { grecaptcha.reset(recapWidget); } catch (e) {}
   }
 </script>
