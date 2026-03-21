@@ -10,15 +10,15 @@
   :description="'The brief was to design an album cover and packaging that visually interprets the music. The front symbolises Jim Morrison and the iconic “L.A. Women” — Morrison often personifies Los Angeles as a woman throughout the record. The back’s swoosh motif complements the interlinked theme of the front, while the use of fire nods to Morrison’s lyric imagery.'"
 
   {{-- Hero (opening) image --}}
-  hero="/doors/d5.webp"
+  hero="doors/d5.webp"
 
   {{-- Gallery (remaining images) --}}
   :gallery="[
-    '/doors/d2.webp',
-    '/doors/d3.webp',
-    '/doors/d4.webp',
-    '/doors/d6.webp',
-    '/doors/d1.webp'
+    'doors/d2.webp',
+    'doors/d3.webp',
+    'doors/d4.webp',
+    'doors/d6.webp',
+    'doors/d1.webp'
   ]"
 
   {{-- Related work --}}
