@@ -244,6 +244,23 @@
           </div>
         </div>
       </div>
+
+    {{-- Back to top button --}}
+    <button x-cloak
+            x-show="scrolled"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-75"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-75"
+            @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            aria-label="Back to top"
+            class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-[#1b2421] border border-white/10 shadow-lg flex items-center justify-center hover:bg-[#22332d] active:scale-95 transition-all duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0b46d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
   </div>
 @stack('scripts')
 </body>
