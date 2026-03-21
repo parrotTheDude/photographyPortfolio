@@ -27,7 +27,11 @@ class ContactController extends Controller
             ]
         );
 
-        if (!($captcha->json()['success'] ?? false)) {
+        $captchaResult = $captcha->json();
+
+        if (!($captchaResult['success'] ?? false)
+            || ($captchaResult['score'] ?? 0) < config('services.recaptcha.min_score', 0.5)
+        ) {
             return back()
                 ->withErrors(['captcha' => 'reCAPTCHA verification failed.'])
                 ->withInput();
