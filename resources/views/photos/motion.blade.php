@@ -6,6 +6,21 @@
 @section('og_description', 'Motion photography by Evie Bowerman — movement, energy, and dynamic compositions.')
 @section('og_image', asset('images/motion/m4.webp'))
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Motion Photography",
+  "description": "Motion photography by Evie Bowerman — scenes full of movement and energy.",
+  "url": "{{ url('/motion') }}",
+  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "about": { "@type": "Thing", "name": "Motion and Movement" },
+  "image": "{{ asset('images/motion/m4.webp') }}"
+}
+</script>
+@endpush
+
 @section('content')
 <x-photo-collection
   title="Motion"

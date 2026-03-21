@@ -6,6 +6,22 @@
 @section('og_description', 'Logo, packaging, and seasonal campaign with a warm, nostalgic tone by Evie Bowerman.')
 @section('og_image', asset('images/displayImgs/wholesome.webp'))
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Wholesome Harvest",
+  "description": "Logo, packaging, and seasonal campaign redesign with a warm, nostalgic tone.",
+  "image": "{{ asset('images/displayImgs/wholesome.webp') }}",
+  "dateCreated": "2024",
+  "url": "{{ url('/wholesomeHarvest') }}",
+  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "genre": "Packaging Design"
+}
+</script>
+@endpush
+
 @section('content')
 <x-portfolio-page
   title="Wholesome Harvest"

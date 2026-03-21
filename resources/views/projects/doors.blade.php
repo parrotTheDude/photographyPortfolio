@@ -6,6 +6,22 @@
 @section('og_description', 'Album packaging concept exploring Jim Morrison\'s connection to L.A. by Evie Bowerman.')
 @section('og_image', asset('images/displayImgs/doors.webp'))
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "L.A. Women, The Doors",
+  "description": "Album packaging concept exploring Jim Morrison's connection to Los Angeles.",
+  "image": "{{ asset('images/displayImgs/doors.webp') }}",
+  "dateCreated": "2023",
+  "url": "{{ url('/doors') }}",
+  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "genre": "Packaging Design"
+}
+</script>
+@endpush
+
 @section('content')
 <x-portfolio-page
   title="L.A. Women, The Doors"

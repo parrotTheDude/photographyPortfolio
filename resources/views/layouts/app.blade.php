@@ -38,6 +38,28 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
+  {{-- Sitewide JSON-LD --}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Evie Bowerman",
+    "url": "{{ config('app.url') }}",
+    "image": "{{ asset('images/evieP.webp') }}",
+    "jobTitle": "Graphic Designer & Photographer",
+    "description": "North Yorkshire-based graphic designer and photographer specialising in brand identity, packaging, and image-led storytelling.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "North Yorkshire",
+      "addressCountry": "GB"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/evie-bowerman-2a56a7232/",
+      "https://www.instagram.com/bowermandesigns/"
+    ]
+  }
+  </script>
+
   {{-- Allow page-specific extra tags --}}
   @stack('head')
 </head>

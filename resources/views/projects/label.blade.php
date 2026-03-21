@@ -6,6 +6,22 @@
 @section('og_description', 'Anti-brand upcycling garments to reduce inequality. Brand identity by Evie Bowerman.')
 @section('og_image', asset('images/displayImgs/label.webp'))
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Label Less",
+  "description": "An anti-brand upcycling second-hand garments to reduce inequality through design.",
+  "image": "{{ asset('images/displayImgs/label.webp') }}",
+  "dateCreated": "2022",
+  "url": "{{ url('/label') }}",
+  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "genre": "Brand Identity"
+}
+</script>
+@endpush
+
 @section('content')
 <x-portfolio-page
   title="Label Less"

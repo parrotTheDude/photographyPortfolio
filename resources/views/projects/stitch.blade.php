@@ -6,6 +6,22 @@
 @section('og_description', 'Clothing brand focused on fit-first confidence. Brand identity by Evie Bowerman.')
 @section('og_image', asset('images/displayImgs/stitchOL.webp'))
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Stitch Tailoring",
+  "description": "Clothing brand focused on fit-first confidence. Stitch abolishes the sizing system, stitching each piece to fit your unique frame.",
+  "image": "{{ asset('images/displayImgs/stitchOL.webp') }}",
+  "dateCreated": "2024",
+  "url": "{{ url('/stitch') }}",
+  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "genre": "Brand Identity"
+}
+</script>
+@endpush
+
 @section('content')
 <x-portfolio-page
   title="Stitch Tailoring"

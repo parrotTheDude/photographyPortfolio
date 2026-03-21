@@ -6,6 +6,22 @@
 @section('og_description', 'Packaging refresh and brand world for W7 cosmetics by Evie Bowerman.')
 @section('og_image', asset('images/displayImgs/w7.webp'))
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "W7 Rebrand",
+  "description": "Packaging refresh and brand world for W7 cosmetics, drawing on London roots.",
+  "image": "{{ asset('images/displayImgs/w7.webp') }}",
+  "dateCreated": "2023",
+  "url": "{{ url('/w7') }}",
+  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "genre": "Packaging Design"
+}
+</script>
+@endpush
+
 @section('content')
 <x-portfolio-page
   title="W7 Rebrand"
