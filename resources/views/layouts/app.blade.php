@@ -147,7 +147,7 @@
           ] as $icon => $url)
             <a href="{{ $url }}" target="_blank"
                class="transition transform hover:scale-115 hover:drop-shadow-[0_0_6px_rgba(240,180,109,0.7)]">
-              <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}" class="w-6 invert">
+              <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}" width="24" height="24" class="w-6 invert">
             </a>
           @endforeach
         </div>
@@ -197,7 +197,7 @@
           ] as $icon => $url)
             <a href="{{ $url }}" @click="mobileOpen=false">
               <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}"
-                   class="w-7 invert opacity-90 hover:opacity-100">
+                   width="28" height="28" class="w-7 invert opacity-90 hover:opacity-100">
             </a>
           @endforeach
         </div>

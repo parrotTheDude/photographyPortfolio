@@ -49,3 +49,5 @@ auth.json
 *-1024w.webp
 *-1920w.webp
 .image-hashes/
+/storage/app/image-dimensions.json
+/deploy.sh

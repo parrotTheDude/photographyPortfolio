@@ -50,12 +50,14 @@
         {{-- Portrait --}}
         <div class="order-1 md:order-2 relative aspect-[4/5] overflow-hidden
                     shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
+            @php [$evieW, $evieH] = \App\Helpers\ImageHelper::dimensions('evieP.webp'); @endphp
             <img
                 src="{{ asset('images/evieP.webp') }}"
                 srcset="{{ asset('images/evieP-640w.webp') }} 640w,
                        {{ asset('images/evieP-1024w.webp') }} 1024w,
                        {{ asset('images/evieP-1920w.webp') }} 1920w"
                 sizes="(max-width: 767px) 100vw, 50vw"
+                width="{{ $evieW }}" height="{{ $evieH }}"
                 alt="Evie Bowerman portrait"
                 fetchpriority="high"
                 class="w-full h-full object-cover">

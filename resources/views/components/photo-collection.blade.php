@@ -22,13 +22,17 @@
       <figure class="overflow-hidden shadow-[0_6px_26px_rgba(0,0,0,0.45)]
                      hover:shadow-[0_16px_42px_rgba(0,0,0,0.5)]
                      transition duration-500">
-        @php $photoBase = Str::replaceLast('.webp', '', $src); @endphp
+        @php
+          $photoBase = Str::replaceLast('.webp', '', $src);
+          [$photoW, $photoH] = \App\Helpers\ImageHelper::dimensions($src);
+        @endphp
         <img
           src="{{ asset('images/'.$src) }}"
           srcset="{{ asset('images/'.$photoBase.'-640w.webp') }} 640w,
                  {{ asset('images/'.$photoBase.'-1024w.webp') }} 1024w,
                  {{ asset('images/'.$photoBase.'-1920w.webp') }} 1920w"
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+          width="{{ $photoW }}" height="{{ $photoH }}"
           alt="{{ $title }} photo {{ $i+1 }}"
           @if($i === 0) fetchpriority="high" @else loading="lazy" @endif
           class="w-full h-[22rem] md:h-[26rem] lg:h-[30rem] xl:h-[36rem]
