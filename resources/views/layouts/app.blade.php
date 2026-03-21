@@ -85,7 +85,7 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 h-16 md:h-20">
 
             {{-- Left: Name / Logo --}}
-            <span class="text-2xl md:text-3xl font-extrabold uppercase tracking-wide">
+            <span class="text-2xl md:text-3xl font-extrabold uppercase tracking-wide leading-none">
             <a href="/" class="text-[#f1f3ee] hover:text-[#f0b46d] transition-colors">
                 Evie Bowerman
             </a>

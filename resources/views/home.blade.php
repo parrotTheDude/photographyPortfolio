@@ -51,6 +51,8 @@
 
         @foreach($projects as $p)
             <a href="{{ $p['link'] }}"
+               x-data="{ loading: false }"
+               @click="loading = true"
                class="group relative block overflow-hidden
                       shadow-[0_4px_20px_rgba(0,0,0,0.35)]
                       hover:shadow-[0_12px_35px_rgba(0,0,0,0.45)]
@@ -71,8 +73,10 @@
                      @if($loop->first) fetchpriority="high" @else loading="lazy" @endif
                      class="w-full h-[26rem] md:h-[30rem] lg:h-[34rem] xl:h-[40rem]
                             object-cover transition-transform duration-500 group-hover:scale-110">
-                
-                <div class="absolute inset-0 bg-white/70 backdrop-blur-md
+
+                {{-- Hover overlay with title --}}
+                <div x-show="!loading"
+                     class="absolute inset-0 bg-white/70 backdrop-blur-md
                             opacity-0 group-hover:opacity-100 flex flex-col justify-center
                             items-center text-center transition duration-300">
                     <h3 class="text-3xl lg:text-4xl font-extrabold text-[#27371C] tracking-wide mb-2">
@@ -81,6 +85,15 @@
                     <span class="text-xl lg:text-2xl text-[#27371C] font-medium">
                         {{ $p['year'] }}
                     </span>
+                </div>
+
+                {{-- Loading spinner overlay --}}
+                <div x-show="loading" x-cloak
+                     class="absolute inset-0 bg-white/70 backdrop-blur-md flex items-center justify-center">
+                    <svg class="animate-spin h-8 w-8 text-[#27371C]" viewBox="0 0 24 24" fill="none">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                    </svg>
                 </div>
             </a>
         @endforeach
