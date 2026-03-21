@@ -102,16 +102,19 @@
             @endforeach
             </nav>
 
-            {{-- Mobile menu button --}}
+            {{-- Animated hamburger / X button --}}
             <button type="button"
-                    class="md:hidden flex flex-col gap-1.5 focus:outline-none"
-                    @click="mobileOpen = true"
-                    aria-label="Open menu"
+                    class="md:hidden relative w-8 h-8 flex items-center justify-center focus:outline-none"
+                    @click="mobileOpen = !mobileOpen"
+                    aria-label="Toggle menu"
                     :aria-expanded="mobileOpen"
                     aria-controls="mobile-nav">
-            <span class="w-7 h-0.5 bg-white rounded"></span>
-            <span class="w-7 h-0.5 bg-white rounded"></span>
-            <span class="w-7 h-0.5 bg-white rounded"></span>
+            <span class="absolute w-6 h-0.5 bg-white rounded transition-all duration-300 ease-in-out"
+                  :class="mobileOpen ? 'rotate-45' : '-translate-y-2'"></span>
+            <span class="absolute w-6 h-0.5 bg-white rounded transition-all duration-300 ease-in-out"
+                  :class="mobileOpen ? 'opacity-0 scale-0' : 'opacity-100'"></span>
+            <span class="absolute w-6 h-0.5 bg-white rounded transition-all duration-300 ease-in-out"
+                  :class="mobileOpen ? '-rotate-45' : 'translate-y-2'"></span>
             </button>
         </div>
 
@@ -161,57 +164,86 @@
       </div>
     </footer>
 
-    {{-- MOBILE FULLSCREEN OVERLAY – centered + glassy (HIGHER z-index than header) --}}
-    <div id="mobile-nav"
-         x-cloak
-         x-show="mobileOpen"
-         x-transition.opacity
-         @keydown.escape.window="mobileOpen = false"
-         class="fixed inset-0 z-[60] flex items-center justify-center text-center">
+    {{-- MOBILE SLIDE-IN PANEL --}}
+      {{-- Backdrop --}}
+      <div x-cloak
+           x-show="mobileOpen"
+           x-transition:enter="transition ease-out duration-300"
+           x-transition:enter-start="opacity-0"
+           x-transition:enter-end="opacity-100"
+           x-transition:leave="transition ease-in duration-200"
+           x-transition:leave-start="opacity-100"
+           x-transition:leave-end="opacity-0"
+           @click="mobileOpen = false"
+           class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+           aria-hidden="true"></div>
 
-      {{-- Backdrop that closes on click --}}
-      <button class="absolute inset-0 bg-black/70 backdrop-blur-xl"
-              @click="mobileOpen = false"
-              aria-label="Close menu backdrop"></button>
+      {{-- Panel --}}
+      <div id="mobile-nav"
+           x-cloak
+           x-show="mobileOpen"
+           x-transition:enter="transition ease-out duration-300"
+           x-transition:enter-start="translate-x-full"
+           x-transition:enter-end="translate-x-0"
+           x-transition:leave="transition ease-in duration-200"
+           x-transition:leave-start="translate-x-0"
+           x-transition:leave-end="translate-x-full"
+           @keydown.escape.window="mobileOpen = false"
+           class="fixed top-0 right-0 z-[70] h-full w-[min(80vw,20rem)] bg-[#0f1714]/95 backdrop-blur-2xl border-l border-white/10 flex flex-col">
 
-      {{-- Close button --}}
-      <button class="absolute top-5 right-5 text-white/90 hover:text-white text-3xl z-[61]"
-              @click="mobileOpen = false"
-              aria-label="Close menu">✕</button>
+        {{-- Top: branding --}}
+        <div class="px-8 pt-20 pb-6">
+          <a href="/" @click="mobileOpen=false"
+             class="block text-xl font-extrabold uppercase tracking-wide text-[#f1f3ee] hover:text-[#f0b46d] transition-colors">
+            Evie Bowerman
+          </a>
+          <div class="mt-4 w-10 h-px bg-[#f0b46d]/40"></div>
+        </div>
 
-      {{-- Centered content --}}
-      <div class="relative z-[61] w-full max-w-sm px-8 space-y-10">
-        <a href="/" @click="mobileOpen=false"
-           class="block text-3xl font-extrabold uppercase tracking-wide hover:text-[#f0b46d] transition">
-          Evie Bowerman
-        </a>
-
-        <nav class="space-y-6" aria-label="Mobile navigation">
-          @foreach (['/' => 'Graphics','/photos' => 'Photography','/about' => 'About','/contact' => 'Contact'] as $link => $label)
-            @php $isActive = request()->is(ltrim($link, '/') ?: '/'); @endphp
+        {{-- Nav links with staggered animation --}}
+        <nav class="flex-1 px-8 space-y-1" aria-label="Mobile navigation">
+          @foreach (['/' => 'Graphics', '/photos' => 'Photography', '/about' => 'About', '/contact' => 'Contact'] as $link => $label)
+            @php
+              $isActive = request()->is(ltrim($link, '/') ?: '/');
+              $delay = $loop->index * 75;
+            @endphp
             <a href="{{ $link }}"
                @click="mobileOpen=false"
-               class="block text-2xl uppercase tracking-wide hover:text-[#f0b46d] transition {{ $isActive ? 'text-[#f0b46d]' : '' }}">
-              {{ $label }}
+               x-show="mobileOpen"
+               x-transition:enter="transition ease-out duration-300"
+               x-transition:enter-start="opacity-0 translate-x-4"
+               x-transition:enter-end="opacity-100 translate-x-0"
+               style="transition-delay: {{ $delay }}ms"
+               class="block py-3 text-lg uppercase tracking-widest transition-colors
+                      {{ $isActive ? 'text-[#f0b46d]' : 'text-white/80 hover:text-[#f0b46d]' }}">
+              <span class="flex items-center gap-3">
+                @if($isActive)<span class="w-2 h-0.5 bg-[#f0b46d] rounded-full"></span>@endif
+                {{ $label }}
+              </span>
             </a>
           @endforeach
         </nav>
 
-        <div class="flex justify-center gap-6">
-          @foreach ([
-            'linkedin' => 'https://www.linkedin.com/in/evie-bowerman-2a56a7232/',
-            'insta'    => 'https://www.instagram.com/bowermandesigns/',
-            'email'    => '/contact'
-          ] as $icon => $url)
-            <a href="{{ $url }}" @click="mobileOpen=false"
-               @if(str_starts_with($url, 'http')) target="_blank" rel="noopener" @endif>
-              <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}"
-                   width="28" height="28" class="w-7 invert opacity-90 hover:opacity-100">
-            </a>
-          @endforeach
+        {{-- Bottom: social icons --}}
+        <div class="px-8 pb-10">
+          <div class="w-full h-px bg-white/10 mb-6"></div>
+          <div class="flex gap-6">
+            @foreach ([
+              'linkedin' => 'https://www.linkedin.com/in/evie-bowerman-2a56a7232/',
+              'insta'    => 'https://www.instagram.com/bowermandesigns/',
+              'email'    => '/contact'
+            ] as $icon => $url)
+              <a href="{{ $url }}" @click="mobileOpen=false"
+                 @if(str_starts_with($url, 'http')) target="_blank" rel="noopener" @endif
+                 class="group transition transform hover:scale-110">
+                <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}"
+                     width="24" height="24"
+                     class="w-6 invert opacity-50 group-hover:opacity-100 transition-opacity">
+              </a>
+            @endforeach
+          </div>
         </div>
       </div>
-    </div>
   </div>
 @stack('scripts')
 </body>
