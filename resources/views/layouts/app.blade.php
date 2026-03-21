@@ -155,10 +155,10 @@
         <div class="w-16 h-px bg-white/15 mx-auto mb-6"></div>
 
         {{-- Credit --}}
-        <p class="text-center text-xs text-gray-500 tracking-wide">
+        <p class="text-center text-xs text-gray-400 tracking-wide">
           Built & designed by
           <a href="https://www.bowermandigital.com/" target="_blank" rel="noopener"
-             class="text-gray-400 hover:text-[#f0b46d] transition-colors">Bowerman Digital</a>
+             class="text-gray-300 underline decoration-gray-500 hover:text-[#f0b46d] hover:decoration-[#f0b46d] transition-colors">Bowerman Digital</a>
         </p>
 
       </div>
