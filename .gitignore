@@ -30,14 +30,14 @@ auth.json
 # -------------------------------------------------------------------
 # Composer & Laravel runtime
 # -------------------------------------------------------------------
+/vendor
 /storage/*.key
 /storage/pail
 
 # -------------------------------------------------------------------
-# Node / Frontend
+# Node / Frontend build
 # -------------------------------------------------------------------
 /node_modules
-# Don’t ignore /public/build – we need built assets for production
-!/public/build
+/public/build
 /public/hot
 /public/storage
