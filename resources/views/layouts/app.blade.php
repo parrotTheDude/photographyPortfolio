@@ -85,21 +85,19 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 h-16 md:h-20">
 
             {{-- Left: Name / Logo --}}
-            <h1 class="text-2xl md:text-3xl font-extrabold uppercase tracking-wide">
-            <a href="/"
-                class="transition-colors"
-                :class="scrolled ? 'text-[#f1f3ee] hover:text-[#f0b46d]' : 'text-[#f1f3ee] hover:text-[#f0b46d]'">
+            <span class="text-2xl md:text-3xl font-extrabold uppercase tracking-wide">
+            <a href="/" class="text-[#f1f3ee] hover:text-[#f0b46d] transition-colors">
                 Evie Bowerman
             </a>
-            </h1>
+            </span>
 
             {{-- Right: Desktop Nav --}}
-            <nav class="hidden md:flex gap-6 uppercase text-sm tracking-wide">
+            <nav class="hidden md:flex gap-6 uppercase text-sm tracking-wide" aria-label="Main navigation">
             @foreach (['/' => 'Graphics','/photos' => 'Photography','/about' => 'About','/contact' => 'Contact'] as $link => $label)
-                <a href="{{ $link }}" class="relative group transition-colors"
-                :class="scrolled ? 'text-[#f1f3ee]' : 'text-[#f1f3ee]'">
-                <span class="group-hover:text-[#f0b46d] transition-colors">{{ $label }}</span>
-                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#f0b46d] transition-all duration-300 group-hover:w-full"></span>
+                @php $isActive = request()->is(ltrim($link, '/') ?: '/'); @endphp
+                <a href="{{ $link }}" class="relative group text-[#f1f3ee] transition-colors">
+                <span class="group-hover:text-[#f0b46d] transition-colors {{ $isActive ? 'text-[#f0b46d]' : '' }}">{{ $label }}</span>
+                <span class="absolute left-0 -bottom-1 h-0.5 bg-[#f0b46d] transition-all duration-300 {{ $isActive ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                 </a>
             @endforeach
             </nav>
@@ -137,7 +135,7 @@
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-8 gap-4">
         <p class="text-sm text-gray-300">
           Built & designed by
-          <a href="https://www.bowermandigital.com/" target="_blank" class="underline hover:text-[#f0b46d]">Bowerman Digital</a>
+          <a href="https://www.bowermandigital.com/" target="_blank" rel="noopener" class="underline hover:text-[#f0b46d]">Bowerman Digital</a>
         </p>
         <div class="flex gap-6">
           @foreach ([
@@ -145,7 +143,8 @@
             'insta'    => 'https://www.instagram.com/bowermandesigns/',
             'email'    => '/contact'
           ] as $icon => $url)
-            <a href="{{ $url }}" target="_blank"
+            <a href="{{ $url }}"
+               @if(str_starts_with($url, 'http')) target="_blank" rel="noopener" @endif
                class="transition transform hover:scale-115 hover:drop-shadow-[0_0_6px_rgba(240,180,109,0.7)]">
               <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}" width="24" height="24" class="w-6 invert">
             </a>
@@ -179,11 +178,12 @@
           Evie Bowerman
         </a>
 
-        <nav class="space-y-6">
+        <nav class="space-y-6" aria-label="Mobile navigation">
           @foreach (['/' => 'Graphics','/photos' => 'Photography','/about' => 'About','/contact' => 'Contact'] as $link => $label)
+            @php $isActive = request()->is(ltrim($link, '/') ?: '/'); @endphp
             <a href="{{ $link }}"
                @click="mobileOpen=false"
-               class="block text-2xl uppercase tracking-wide hover:text-[#f0b46d] transition">
+               class="block text-2xl uppercase tracking-wide hover:text-[#f0b46d] transition {{ $isActive ? 'text-[#f0b46d]' : '' }}">
               {{ $label }}
             </a>
           @endforeach
@@ -195,7 +195,8 @@
             'insta'    => 'https://www.instagram.com/bowermandesigns/',
             'email'    => '/contact'
           ] as $icon => $url)
-            <a href="{{ $url }}" @click="mobileOpen=false">
+            <a href="{{ $url }}" @click="mobileOpen=false"
+               @if(str_starts_with($url, 'http')) target="_blank" rel="noopener" @endif>
               <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}"
                    width="28" height="28" class="w-7 invert opacity-90 hover:opacity-100">
             </a>
