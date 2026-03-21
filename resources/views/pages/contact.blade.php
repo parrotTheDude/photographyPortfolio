@@ -24,22 +24,22 @@
     @csrf
 
     <div>
-      <label class="block text-sm mb-1">Name</label>
-      <input type="text" name="name" value="{{ old('name') }}" required
+      <label for="name" class="block text-sm mb-1">Name</label>
+      <input type="text" id="name" name="name" value="{{ old('name') }}" required
              class="w-full px-4 py-3 bg-white/5 border border-white/10 focus:border-[#f0b46d] outline-none" />
       @error('name') <p class="text-red-300 text-sm mt-1">{{ $message }}</p> @enderror
     </div>
 
     <div>
-      <label class="block text-sm mb-1">Email</label>
-      <input type="email" name="email" value="{{ old('email') }}" required
+      <label for="email" class="block text-sm mb-1">Email</label>
+      <input type="email" id="email" name="email" value="{{ old('email') }}" required
              class="w-full px-4 py-3 bg-white/5 border border-white/10 focus:border-[#f0b46d] outline-none" />
       @error('email') <p class="text-red-300 text-sm mt-1">{{ $message }}</p> @enderror
     </div>
 
     <div>
-      <label class="block text-sm mb-1">Message</label>
-      <textarea name="message" rows="6" required
+      <label for="message" class="block text-sm mb-1">Message</label>
+      <textarea id="message" name="message" rows="6" required
                 class="w-full px-4 py-3 bg-white/5 border border-white/10 focus:border-[#f0b46d] outline-none">{{ old('message') }}</textarea>
       @error('message') <p class="text-red-300 text-sm mt-1">{{ $message }}</p> @enderror
     </div>
