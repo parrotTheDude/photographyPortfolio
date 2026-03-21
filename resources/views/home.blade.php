@@ -52,6 +52,7 @@
         @foreach($projects as $p)
             <a href="{{ $p['link'] }}"
                x-data="{ loading: false }"
+               x-init="window.addEventListener('pageshow', () => loading = false)"
                @click="loading = true"
                class="group relative block overflow-hidden
                       shadow-[0_4px_20px_rgba(0,0,0,0.35)]
