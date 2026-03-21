@@ -52,4 +52,3 @@ auth.json
 .image-hashes/
 /storage/app/image-dimensions.json
 /deploy.sh
-package-lock.json
