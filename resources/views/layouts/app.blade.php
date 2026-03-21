@@ -41,15 +41,15 @@
   {{-- Sitewide JSON-LD --}}
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
+    "@@context": "https://schema.org",
+    "@@type": "Person",
     "name": "Evie Bowerman",
     "url": "{{ config('app.url') }}",
     "image": "{{ asset('images/evieP.webp') }}",
     "jobTitle": "Graphic Designer & Photographer",
     "description": "North Yorkshire-based graphic designer and photographer specialising in brand identity, packaging, and image-led storytelling.",
     "address": {
-      "@type": "PostalAddress",
+      "@@type": "PostalAddress",
       "addressRegion": "North Yorkshire",
       "addressCountry": "GB"
     },

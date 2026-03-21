@@ -9,14 +9,14 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
+  "@@context": "https://schema.org",
+  "@@type": "CreativeWork",
   "name": "L.A. Women, The Doors",
   "description": "Album packaging concept exploring Jim Morrison's connection to Los Angeles.",
   "image": "{{ asset('images/displayImgs/doors.webp') }}",
   "dateCreated": "2023",
   "url": "{{ url('/doors') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
   "genre": "Packaging Design"
 }
 </script>

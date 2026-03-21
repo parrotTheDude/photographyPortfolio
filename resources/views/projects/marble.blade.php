@@ -9,14 +9,14 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
+  "@@context": "https://schema.org",
+  "@@type": "CreativeWork",
   "name": "Marble Blue",
   "description": "Beach bar and hotel identity with textured, water-inspired typography and menu design.",
   "image": "{{ asset('images/displayImgs/marble.webp') }}",
   "dateCreated": "2024",
   "url": "{{ url('/marble') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
   "genre": "Brand Identity"
 }
 </script>

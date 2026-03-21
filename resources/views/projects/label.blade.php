@@ -9,14 +9,14 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
+  "@@context": "https://schema.org",
+  "@@type": "CreativeWork",
   "name": "Label Less",
   "description": "An anti-brand upcycling second-hand garments to reduce inequality through design.",
   "image": "{{ asset('images/displayImgs/label.webp') }}",
   "dateCreated": "2022",
   "url": "{{ url('/label') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
   "genre": "Brand Identity"
 }
 </script>

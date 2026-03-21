@@ -9,13 +9,13 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ImageGallery",
+  "@@context": "https://schema.org",
+  "@@type": "ImageGallery",
   "name": "Wildlife Photography",
   "description": "Wildlife photography from Evie Bowerman's trip to Borneo.",
   "url": "{{ url('/wildlife') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
-  "about": { "@type": "Thing", "name": "Wildlife in Borneo" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
+  "about": { "@@type": "Thing", "name": "Wildlife in Borneo" },
   "image": "{{ asset('images/wildlife/wildlife8.webp') }}"
 }
 </script>

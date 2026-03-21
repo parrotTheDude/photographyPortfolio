@@ -9,14 +9,14 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
+  "@@context": "https://schema.org",
+  "@@type": "CreativeWork",
   "name": "Stump Cross Caverns",
   "description": "Leaflets, posters, menus, and a roadside billboard for a Yorkshire show cave, cafe, and gift shop.",
   "image": "{{ asset('images/displayImgs/sxcOL.webp') }}",
   "dateCreated": "2025",
   "url": "{{ url('/stump-cross-caverns') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
   "genre": "Print Design"
 }
 </script>

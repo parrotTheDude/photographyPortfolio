@@ -9,13 +9,13 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ImageGallery",
+  "@@context": "https://schema.org",
+  "@@type": "ImageGallery",
   "name": "Pet Photography",
   "description": "Pet photography portraits by Evie Bowerman.",
   "url": "{{ url('/pets') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
-  "about": { "@type": "Thing", "name": "Pets" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
+  "about": { "@@type": "Thing", "name": "Pets" },
   "image": "{{ asset('images/pets/p4.webp') }}"
 }
 </script>

@@ -9,20 +9,20 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
+  "@@context": "https://schema.org",
+  "@@type": "CollectionPage",
   "name": "Evie Bowerman — Graphic Design & Photography Portfolio",
   "description": "Brand identity, packaging, and photography portfolio by Evie Bowerman.",
   "url": "{{ config('app.url') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
   "hasPart": [
-    { "@type": "CreativeWork", "name": "Stitch Tailoring", "url": "{{ url('/stitch') }}" },
-    { "@type": "CreativeWork", "name": "Wholesome Harvest", "url": "{{ url('/wholesomeHarvest') }}" },
-    { "@type": "CreativeWork", "name": "W7 Rebrand", "url": "{{ url('/w7') }}" },
-    { "@type": "CreativeWork", "name": "Marble Blue", "url": "{{ url('/marble') }}" },
-    { "@type": "CreativeWork", "name": "Label Less", "url": "{{ url('/label') }}" },
-    { "@type": "CreativeWork", "name": "Stump Cross Caverns", "url": "{{ url('/stump-cross-caverns') }}" },
-    { "@type": "CreativeWork", "name": "L.A. Women, The Doors", "url": "{{ url('/doors') }}" }
+    { "@@type": "CreativeWork", "name": "Stitch Tailoring", "url": "{{ url('/stitch') }}" },
+    { "@@type": "CreativeWork", "name": "Wholesome Harvest", "url": "{{ url('/wholesomeHarvest') }}" },
+    { "@@type": "CreativeWork", "name": "W7 Rebrand", "url": "{{ url('/w7') }}" },
+    { "@@type": "CreativeWork", "name": "Marble Blue", "url": "{{ url('/marble') }}" },
+    { "@@type": "CreativeWork", "name": "Label Less", "url": "{{ url('/label') }}" },
+    { "@@type": "CreativeWork", "name": "Stump Cross Caverns", "url": "{{ url('/stump-cross-caverns') }}" },
+    { "@@type": "CreativeWork", "name": "L.A. Women, The Doors", "url": "{{ url('/doors') }}" }
   ]
 }
 </script>

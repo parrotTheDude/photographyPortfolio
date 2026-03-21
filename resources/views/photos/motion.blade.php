@@ -9,13 +9,13 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ImageGallery",
+  "@@context": "https://schema.org",
+  "@@type": "ImageGallery",
   "name": "Motion Photography",
   "description": "Motion photography by Evie Bowerman — scenes full of movement and energy.",
   "url": "{{ url('/motion') }}",
-  "author": { "@type": "Person", "name": "Evie Bowerman" },
-  "about": { "@type": "Thing", "name": "Motion and Movement" },
+  "author": { "@@type": "Person", "name": "Evie Bowerman" },
+  "about": { "@@type": "Thing", "name": "Motion and Movement" },
   "image": "{{ asset('images/motion/m4.webp') }}"
 }
 </script>
