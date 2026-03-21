@@ -131,13 +131,11 @@
     </main>
 
     {{-- FOOTER --}}
-    <footer class="mt-16 border-t border-white/20">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-8 gap-4">
-        <p class="text-sm text-gray-300">
-          Built & designed by
-          <a href="https://www.bowermandigital.com/" target="_blank" rel="noopener" class="underline hover:text-[#f0b46d]">Bowerman Digital</a>
-        </p>
-        <div class="flex gap-6">
+    <footer class="mt-20 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 py-10">
+
+        {{-- Social icons centred --}}
+        <div class="flex justify-center gap-8 mb-8">
           @foreach ([
             'linkedin' => 'https://www.linkedin.com/in/evie-bowerman-2a56a7232/',
             'insta'    => 'https://www.instagram.com/bowermandesigns/',
@@ -145,11 +143,24 @@
           ] as $icon => $url)
             <a href="{{ $url }}"
                @if(str_starts_with($url, 'http')) target="_blank" rel="noopener" @endif
-               class="transition transform hover:scale-115 hover:drop-shadow-[0_0_6px_rgba(240,180,109,0.7)]">
-              <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}" width="24" height="24" class="w-6 invert">
+               class="group transition transform hover:scale-110">
+              <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}"
+                   width="28" height="28"
+                   class="w-7 invert opacity-60 group-hover:opacity-100 transition-opacity">
             </a>
           @endforeach
         </div>
+
+        {{-- Divider --}}
+        <div class="w-16 h-px bg-white/15 mx-auto mb-6"></div>
+
+        {{-- Credit --}}
+        <p class="text-center text-xs text-gray-500 tracking-wide">
+          Built & designed by
+          <a href="https://www.bowermandigital.com/" target="_blank" rel="noopener"
+             class="text-gray-400 hover:text-[#f0b46d] transition-colors">Bowerman Digital</a>
+        </p>
+
       </div>
     </footer>
 
