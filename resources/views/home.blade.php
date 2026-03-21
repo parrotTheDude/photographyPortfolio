@@ -33,6 +33,8 @@
             min-h-[calc(100vh-6rem)]   {{-- ensures full-page height --}}
             flex flex-col justify-start">
     
+    <h2 class="sr-only">Selected Work</h2>
+
     {{-- Portfolio grid --}}
     <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 flex-1">
         @php
