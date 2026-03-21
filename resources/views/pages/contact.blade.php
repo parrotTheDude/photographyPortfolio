@@ -81,6 +81,27 @@
 <script>
   let recapWidget = null;
   let submitting = false;
+  let recaptchaReady = false;
+  let pendingSubmit = false;
+
+  // Lazy-load reCAPTCHA: only fetch the script when the user
+  // first interacts with the form (focus, click, or touch).
+  // This keeps it off the main thread during initial page load.
+  function loadRecaptcha() {
+    if (document.getElementById('recaptcha-script')) return;
+    const s = document.createElement('script');
+    s.id = 'recaptcha-script';
+    s.src = 'https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoaded';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  // Trigger load on first interaction with the form
+  const form = document.getElementById('contactForm');
+  ['focusin', 'click', 'touchstart'].forEach(function (evt) {
+    form.addEventListener(evt, loadRecaptcha, { once: true, passive: true });
+  });
 
   function onRecaptchaLoaded() {
     recapWidget = grecaptcha.render('recaptcha-container', {
@@ -91,43 +112,56 @@
       'error-callback': onRecaptchaError,
       'expired-callback': onRecaptchaError,
     });
+    recaptchaReady = true;
 
-    const form = document.getElementById('contactForm');
-    const btn  = document.getElementById('contactSubmit');
-
-    form.addEventListener('submit', function (e) {
-      if (!submitting) e.preventDefault();
-    });
-
-    btn.addEventListener('click', function () {
-      if (submitting) return;
-      submitting = true;
-      btn.disabled = true;
-      document.getElementById('contactSpinner').classList.remove('hidden');
-      document.getElementById('contactBtnText').textContent = 'Sending...';
-      try { grecaptcha.execute(recapWidget); }
-      catch (e) {
-        submitting = false;
-        btn.disabled = false;
-        document.getElementById('contactSpinner').classList.add('hidden');
-        document.getElementById('contactBtnText').textContent = 'Send Message';
-        console.error(e);
-      }
-    });
+    // If the user already clicked Send while reCAPTCHA was loading, fire now
+    if (pendingSubmit) {
+      pendingSubmit = false;
+      grecaptcha.execute(recapWidget);
+    }
   }
 
+  form.addEventListener('submit', function (e) {
+    if (!submitting) e.preventDefault();
+  });
+
+  document.getElementById('contactSubmit').addEventListener('click', function () {
+    if (submitting) return;
+    submitting = true;
+    this.disabled = true;
+    document.getElementById('contactSpinner').classList.remove('hidden');
+    document.getElementById('contactBtnText').textContent = 'Sending...';
+
+    // If reCAPTCHA hasn't loaded yet, start loading and queue the submit
+    if (!recaptchaReady) {
+      loadRecaptcha();
+      pendingSubmit = true;
+      return;
+    }
+
+    try { grecaptcha.execute(recapWidget); }
+    catch (e) {
+      resetButton();
+      console.error(e);
+    }
+  });
+
   function onRecaptchaSuccess() {
-    document.getElementById('contactForm').submit();
+    form.submit();
   }
 
   function onRecaptchaError() {
+    resetButton();
+    try { grecaptcha.reset(recapWidget); } catch (e) {}
+  }
+
+  function resetButton() {
     submitting = false;
+    pendingSubmit = false;
     const btn = document.getElementById('contactSubmit');
     if (btn) btn.disabled = false;
     document.getElementById('contactSpinner').classList.add('hidden');
     document.getElementById('contactBtnText').textContent = 'Send Message';
-    try { grecaptcha.reset(recapWidget); } catch (e) {}
   }
 </script>
-<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoaded" async defer></script>
 @endpush
