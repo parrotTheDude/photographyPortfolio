@@ -18,16 +18,25 @@
          x-data="{
            images: {{ Js::from($allImages) }},
            current: -1,
+           touchStartX: 0,
+           touchStartY: 0,
            get isOpen() { return this.current >= 0 },
            open(i) { this.current = i },
            close() { this.current = -1 },
            next() { if (this.current < this.images.length - 1) this.current++ },
            prev() { if (this.current > 0) this.current-- },
+           onTouchStart(e) { this.touchStartX = e.touches[0].clientX; this.touchStartY = e.touches[0].clientY },
+           onTouchEnd(e) {
+             const dx = e.changedTouches[0].clientX - this.touchStartX;
+             const dy = e.changedTouches[0].clientY - this.touchStartY;
+             if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
+             if (dx < 0) this.next(); else this.prev();
+           },
          }">
 
   {{-- Hero --}}
   <div class="grid md:grid-cols-2 gap-10 lg:gap-14 items-center animate-fade-in-up">
-    <div class="space-y-5">
+    <div class="space-y-5 order-2 md:order-1">
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
         {{ $title }}
       </h1>
@@ -59,7 +68,7 @@
         $heroBase = Str::replaceLast('.webp', '', $hero);
         [$heroW, $heroH] = \App\Helpers\ImageHelper::dimensions($hero);
       @endphp
-      <figure class="relative overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] cursor-pointer max-h-[calc(100vh-8rem)]"
+      <figure class="relative overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] cursor-pointer max-h-[calc(100vh-8rem)] order-1 md:order-2"
               @click="open(0)">
         <img src="{{ asset('images/'.$hero) }}"
              srcset="{{ asset('images/'.$heroBase.'-480w.webp') }} 480w,
@@ -125,6 +134,8 @@
          @keydown.escape.window="close()"
          @keydown.right.window="next()"
          @keydown.left.window="prev()"
+         @touchstart="onTouchStart($event)"
+         @touchend="onTouchEnd($event)"
          style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:rgba(0,0,0,0.92);cursor:pointer;">
 
       {{-- Centered image --}}
