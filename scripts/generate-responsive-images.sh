@@ -1,7 +1,7 @@
 #!/bin/bash
 # ──────────────────────────────────────────────
 # Generate responsive image variants for srcset
-# Creates 640w, 1024w, and 1920w versions of
+# Creates 480w, 640w, 1024w, and 1920w versions of
 # every .webp image in public/images/
 #
 # Uses MD5 checksums to skip unchanged sources,
@@ -11,7 +11,7 @@
 set -e
 
 SRC_DIR="$(cd "$(dirname "$0")/../public/images" && pwd)"
-WIDTHS=(640 1024 1920)
+WIDTHS=(480 640 1024 1920)
 HASH_DIR="$SRC_DIR/.image-hashes"
 mkdir -p "$HASH_DIR"
 
@@ -19,6 +19,7 @@ generated=0
 skipped=0
 
 find "$SRC_DIR" -type f -name "*.webp" \
+    ! -name "*-480w.webp" \
     ! -name "*-640w.webp" \
     ! -name "*-1024w.webp" \
     ! -name "*-1920w.webp" | while read -r img; do
@@ -55,7 +56,9 @@ find "$SRC_DIR" -type f -name "*.webp" \
             cp "$img" "$out"
         else
             # Lower quality for smaller sizes — they don't need it
-            if [ "$w" -le 640 ]; then
+            if [ "$w" -le 480 ]; then
+                q=70
+            elif [ "$w" -le 640 ]; then
                 q=72
             elif [ "$w" -le 1024 ]; then
                 q=76

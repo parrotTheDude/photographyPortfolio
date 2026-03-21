@@ -35,7 +35,8 @@
       @endphp
       <figure class="relative aspect-[4/5] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
         <img src="{{ asset('images/'.$hero) }}"
-             srcset="{{ asset('images/'.$heroBase.'-640w.webp') }} 640w,
+             srcset="{{ asset('images/'.$heroBase.'-480w.webp') }} 480w,
+                    {{ asset('images/'.$heroBase.'-640w.webp') }} 640w,
                     {{ asset('images/'.$heroBase.'-1024w.webp') }} 1024w,
                     {{ asset('images/'.$heroBase.'-1920w.webp') }} 1920w"
              sizes="(max-width: 767px) 100vw, (max-width: 1280px) 45vw, 588px"
@@ -58,7 +59,8 @@
             [$galW, $galH] = \App\Helpers\ImageHelper::dimensions($src);
           @endphp
           <img src="{{ asset('images/'.$src) }}"
-               srcset="{{ asset('images/'.$galBase.'-640w.webp') }} 640w,
+               srcset="{{ asset('images/'.$galBase.'-480w.webp') }} 480w,
+                      {{ asset('images/'.$galBase.'-640w.webp') }} 640w,
                       {{ asset('images/'.$galBase.'-1024w.webp') }} 1024w,
                       {{ asset('images/'.$galBase.'-1920w.webp') }} 1920w"
                sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
@@ -87,7 +89,8 @@
               [$relW, $relH] = \App\Helpers\ImageHelper::dimensions($p['img']);
             @endphp
             <img src="{{ asset('images/'.$p['img']) }}"
-                 srcset="{{ asset('images/'.$relBase.'-640w.webp') }} 640w,
+                 srcset="{{ asset('images/'.$relBase.'-480w.webp') }} 480w,
+                        {{ asset('images/'.$relBase.'-640w.webp') }} 640w,
                         {{ asset('images/'.$relBase.'-1024w.webp') }} 1024w,
                         {{ asset('images/'.$relBase.'-1920w.webp') }} 1920w"
                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"

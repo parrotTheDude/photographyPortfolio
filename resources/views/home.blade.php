@@ -61,7 +61,8 @@
                     [$imgW, $imgH] = \App\Helpers\ImageHelper::dimensions($p['img']);
                 @endphp
                 <img src="{{ asset('images/'.$p['img']) }}"
-                     srcset="{{ asset('images/'.$imgBase.'-640w.webp') }} 640w,
+                     srcset="{{ asset('images/'.$imgBase.'-480w.webp') }} 480w,
+                            {{ asset('images/'.$imgBase.'-640w.webp') }} 640w,
                             {{ asset('images/'.$imgBase.'-1024w.webp') }} 1024w,
                             {{ asset('images/'.$imgBase.'-1920w.webp') }} 1920w"
                      sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"

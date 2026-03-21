@@ -28,7 +28,8 @@
         @endphp
         <img
           src="{{ asset('images/'.$src) }}"
-          srcset="{{ asset('images/'.$photoBase.'-640w.webp') }} 640w,
+          srcset="{{ asset('images/'.$photoBase.'-480w.webp') }} 480w,
+                 {{ asset('images/'.$photoBase.'-640w.webp') }} 640w,
                  {{ asset('images/'.$photoBase.'-1024w.webp') }} 1024w,
                  {{ asset('images/'.$photoBase.'-1920w.webp') }} 1920w"
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"

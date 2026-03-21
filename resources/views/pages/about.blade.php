@@ -53,7 +53,8 @@
             @php [$evieW, $evieH] = \App\Helpers\ImageHelper::dimensions('evieP.webp'); @endphp
             <img
                 src="{{ asset('images/evieP.webp') }}"
-                srcset="{{ asset('images/evieP-640w.webp') }} 640w,
+                srcset="{{ asset('images/evieP-480w.webp') }} 480w,
+                       {{ asset('images/evieP-640w.webp') }} 640w,
                        {{ asset('images/evieP-1024w.webp') }} 1024w,
                        {{ asset('images/evieP-1920w.webp') }} 1920w"
                 sizes="(max-width: 767px) 100vw, (max-width: 1280px) 45vw, 588px"
