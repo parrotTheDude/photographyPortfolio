@@ -4,7 +4,7 @@
 @section('meta_description', 'Pet photography by Evie Bowerman — portraits of dogs, cats, and everyone\'s favourite animals.')
 @section('og_title', 'Pet Photography | Evie Bowerman')
 @section('og_description', 'Pet photography portraits by Evie Bowerman.')
-@section('og_image', asset('images/pets/p4.webp'))
+@section('og_image'){{ asset('images/pets/p4.webp') }}@endsection
 
 @push('head')
 <script type="application/ld+json">

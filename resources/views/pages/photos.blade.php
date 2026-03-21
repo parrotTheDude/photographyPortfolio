@@ -4,7 +4,7 @@
 @section('meta_description', 'Photography collections by Evie Bowerman — pets, motion, and wildlife photography with a focus on tone, texture, and mood.')
 @section('og_title', 'Photography | Evie Bowerman')
 @section('og_description', 'Pets, motion, and wildlife photography collections by Evie Bowerman.')
-@section('og_image', asset('images/pets/p4.webp'))
+@section('og_image'){{ asset('images/pets/p4.webp') }}@endsection
 
 @section('content')
 <section class="max-w-8xl mx-auto px-4 lg:px-8 min-h-[calc(100vh-6rem)]">

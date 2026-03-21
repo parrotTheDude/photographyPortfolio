@@ -4,7 +4,7 @@
 @section('meta_description', 'Label Less — an anti-brand upcycling second-hand garments to reduce inequality through design. Brand identity by Evie Bowerman.')
 @section('og_title', 'Label Less | Evie Bowerman')
 @section('og_description', 'Anti-brand upcycling garments to reduce inequality. Brand identity by Evie Bowerman.')
-@section('og_image', asset('images/displayImgs/label.webp'))
+@section('og_image'){{ asset('images/displayImgs/label.webp') }}@endsection
 
 @push('head')
 <script type="application/ld+json">

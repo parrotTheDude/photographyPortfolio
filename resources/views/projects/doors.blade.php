@@ -4,7 +4,7 @@
 @section('meta_description', 'L.A. Women, The Doors — album packaging concept exploring Jim Morrison\'s connection to Los Angeles. Designed by Evie Bowerman.')
 @section('og_title', 'L.A. Women, The Doors | Evie Bowerman')
 @section('og_description', 'Album packaging concept exploring Jim Morrison\'s connection to L.A. by Evie Bowerman.')
-@section('og_image', asset('images/displayImgs/doors.webp'))
+@section('og_image'){{ asset('images/displayImgs/doors.webp') }}@endsection
 
 @push('head')
 <script type="application/ld+json">

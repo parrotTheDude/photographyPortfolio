@@ -4,7 +4,7 @@
 @section('meta_description', 'Design work for Stump Cross Caverns — leaflets, posters, menus, and a roadside billboard for this Yorkshire show cave. By Evie Bowerman.')
 @section('og_title', 'Stump Cross Caverns | Evie Bowerman')
 @section('og_description', 'Leaflets, posters, menus, and billboard design for Stump Cross Caverns by Evie Bowerman.')
-@section('og_image', asset('images/displayImgs/sxcOL.webp'))
+@section('og_image'){{ asset('images/displayImgs/sxcOL.webp') }}@endsection
 
 @push('head')
 <script type="application/ld+json">

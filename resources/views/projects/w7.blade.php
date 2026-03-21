@@ -4,7 +4,7 @@
 @section('meta_description', 'W7 packaging refresh and brand world concept — redesigning affordable cosmetics with London-inspired identity. By Evie Bowerman.')
 @section('og_title', 'W7 Rebrand | Evie Bowerman')
 @section('og_description', 'Packaging refresh and brand world for W7 cosmetics by Evie Bowerman.')
-@section('og_image', asset('images/displayImgs/w7.webp'))
+@section('og_image'){{ asset('images/displayImgs/w7.webp') }}@endsection
 
 @push('head')
 <script type="application/ld+json">

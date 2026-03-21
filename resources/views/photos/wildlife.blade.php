@@ -4,7 +4,7 @@
 @section('meta_description', 'Wildlife photography from Evie Bowerman\'s trip to Borneo — capturing orangutans, proboscis monkeys, and tropical birdlife.')
 @section('og_title', 'Wildlife Photography | Evie Bowerman')
 @section('og_description', 'Wildlife photography from Borneo by Evie Bowerman.')
-@section('og_image', asset('images/wildlife/wildlife8.webp'))
+@section('og_image'){{ asset('images/wildlife/wildlife8.webp') }}@endsection
 
 @push('head')
 <script type="application/ld+json">

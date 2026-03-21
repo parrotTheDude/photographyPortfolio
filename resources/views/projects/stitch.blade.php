@@ -4,7 +4,7 @@
 @section('meta_description', 'Stitch Tailoring — a clothing brand that abolishes sizing, stitching each piece to fit your unique frame. Brand identity by Evie Bowerman.')
 @section('og_title', 'Stitch Tailoring | Evie Bowerman')
 @section('og_description', 'Clothing brand focused on fit-first confidence. Brand identity by Evie Bowerman.')
-@section('og_image', asset('images/displayImgs/stitchOL.webp'))
+@section('og_image'){{ asset('images/displayImgs/stitchOL.webp') }}@endsection
 
 @push('head')
 <script type="application/ld+json">
