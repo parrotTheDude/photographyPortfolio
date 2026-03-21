@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('title', 'Graphic Design & Photography | Evie Bowerman')
+@section('meta_description', 'Portfolio of Evie Bowerman — graphic designer and photographer based in North Yorkshire, specialising in brand identity, packaging, and image-led storytelling.')
+@section('og_title', 'Evie Bowerman — Graphic Design & Photography')
+@section('og_description', 'Brand identity, packaging, and photography portfolio by Evie Bowerman.')
+@section('og_image', asset('images/displayImgs/stitchOL.webp'))
 
 @section('content')
 <div class="max-w-8xl mx-auto px-4 lg:px-8

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Marble Blue | Beach Bar Rebrand')
+@section('title', 'Marble Blue | Evie Bowerman')
+@section('meta_description', 'Marble Blue — beach bar and hotel identity with textured, water-inspired typography and menu design. By Evie Bowerman.')
+@section('og_title', 'Marble Blue | Evie Bowerman')
+@section('og_description', 'Beach bar and hotel brand identity by Evie Bowerman.')
+@section('og_image', asset('images/displayImgs/marble.webp'))
 
 @section('content')
 <x-portfolio-page

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Wholesome Harvest | Redesign')
+@section('title', 'Wholesome Harvest | Evie Bowerman')
+@section('meta_description', 'Wholesome Harvest — logo, packaging, and seasonal campaign redesign with a warm, nostalgic tone. By Evie Bowerman.')
+@section('og_title', 'Wholesome Harvest | Evie Bowerman')
+@section('og_description', 'Logo, packaging, and seasonal campaign with a warm, nostalgic tone by Evie Bowerman.')
+@section('og_image', asset('images/displayImgs/wholesome.webp'))
 
 @section('content')
 <x-portfolio-page

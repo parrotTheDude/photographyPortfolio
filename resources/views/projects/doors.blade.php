@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'L.A. Women, The Doors | Rebranding Concept')
+@section('title', 'L.A. Women, The Doors | Evie Bowerman')
+@section('meta_description', 'L.A. Women, The Doors — album packaging concept exploring Jim Morrison\'s connection to Los Angeles. Designed by Evie Bowerman.')
+@section('og_title', 'L.A. Women, The Doors | Evie Bowerman')
+@section('og_description', 'Album packaging concept exploring Jim Morrison\'s connection to L.A. by Evie Bowerman.')
+@section('og_image', asset('images/displayImgs/doors.webp'))
 
 @section('content')
 <x-portfolio-page

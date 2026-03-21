@@ -19,13 +19,14 @@
 
   {{-- Open Graph / Twitter --}}
   <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:title" content="@yield('og_title', 'Evie Bowerman')">
   <meta property="og:description" content="@yield('og_description', 'Graphic design & photography by Evie Bowerman')">
   <meta property="og:image" content="@yield('og_image', asset('images/displayImgs/stitchOL.webp'))">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="@yield('twitter_title', 'Evie Bowerman')">
-  <meta name="twitter:description" content="@yield('twitter_description', 'Graphic design & photography by Evie Bowerman')">
-  <meta name="twitter:image" content="@yield('twitter_image', asset('images/displayImgs/stitchOL.webp'))">
+  <meta name="twitter:title" content="@yield('og_title', 'Evie Bowerman')">
+  <meta name="twitter:description" content="@yield('og_description', 'Graphic design & photography by Evie Bowerman')">
+  <meta name="twitter:image" content="@yield('og_image', asset('images/displayImgs/stitchOL.webp'))">
 
   {{-- CSRF --}}
   <meta name="csrf-token" content="{{ csrf_token() }}">

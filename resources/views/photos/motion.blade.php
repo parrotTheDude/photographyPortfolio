@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Motion | Photography')
+@section('title', 'Motion Photography | Evie Bowerman')
+@section('meta_description', 'Motion photography by Evie Bowerman — scenes full of movement and energy captured in dynamic compositions.')
+@section('og_title', 'Motion Photography | Evie Bowerman')
+@section('og_description', 'Motion photography by Evie Bowerman — movement, energy, and dynamic compositions.')
+@section('og_image', asset('images/motion/m4.webp'))
 
 @section('content')
 <x-photo-collection

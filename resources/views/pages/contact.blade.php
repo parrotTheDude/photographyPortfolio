@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
-@section('title','Contact | Evie Bowerman')
+@section('title', 'Contact | Evie Bowerman')
+@section('meta_description', 'Get in touch with Evie Bowerman for brand identity, packaging design, or photography enquiries.')
+@section('og_title', 'Contact Evie Bowerman')
+@section('og_description', 'Start a project or book a shoot with Evie Bowerman.')
 
 @section('content')
 <section class="max-w-3xl mx-auto px-4 py-8">

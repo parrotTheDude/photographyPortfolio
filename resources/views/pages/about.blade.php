@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('title', 'About | Evie Bowerman')
+@section('meta_description', 'Meet Evie Bowerman — a North Yorkshire-based graphic designer and Northumbria University graduate specialising in brand identity, packaging, and photography.')
+@section('og_title', 'About Evie Bowerman')
+@section('og_description', 'North Yorkshire-based graphic designer and photographer specialising in brand identity, packaging, and image-led storytelling.')
+@section('og_image', asset('images/evieP.webp'))
 
 @section('content')
 <section class="max-w-7xl mx-auto px-4 md:px-8">
