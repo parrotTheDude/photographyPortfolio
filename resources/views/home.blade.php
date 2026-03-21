@@ -56,8 +56,14 @@
                       hover:shadow-[0_12px_35px_rgba(0,0,0,0.45)]
                       transition duration-500 transform hover:-translate-y-1">
                
+                @php $imgBase = Str::replaceLast('.webp', '', $p['img']); @endphp
                 <img src="{{ asset('images/'.$p['img']) }}"
+                     srcset="{{ asset('images/'.$imgBase.'-640w.webp') }} 640w,
+                            {{ asset('images/'.$imgBase.'-1024w.webp') }} 1024w,
+                            {{ asset('images/'.$imgBase.'-1920w.webp') }} 1920w"
+                     sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                      alt="{{ $p['title'] }}"
+                     @if($loop->first) fetchpriority="high" @else loading="lazy" @endif
                      class="w-full h-[26rem] md:h-[30rem] lg:h-[34rem] xl:h-[40rem]
                             object-cover transition-transform duration-500 group-hover:scale-110">
                 

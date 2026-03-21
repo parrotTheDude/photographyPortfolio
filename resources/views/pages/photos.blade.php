@@ -36,11 +36,15 @@
                       hover:shadow-[0_16px_42px_rgba(0,0,0,0.5)]
                       transition duration-500 transform hover:-translate-y-1">
 
+                @php $colBase = Str::replaceLast('.webp', '', $c['img']); @endphp
                 <img
                     src="{{ asset('images/'.$c['img']) }}"
-                    @if($c['placeholder']) data-placeholder="{{ asset('images/'.$c['placeholder']) }}" @endif
+                    srcset="{{ asset('images/'.$colBase.'-640w.webp') }} 640w,
+                           {{ asset('images/'.$colBase.'-1024w.webp') }} 1024w,
+                           {{ asset('images/'.$colBase.'-1920w.webp') }} 1920w"
+                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                     alt="{{ $c['title'] }} cover"
-                    loading="lazy"
+                    @if($loop->first) fetchpriority="high" @else loading="lazy" @endif
                     class="w-full h-[26rem] md:h-[32rem] lg:h-[36rem] xl:h-[42rem] object-cover
                            transition-transform duration-700 group-hover:scale-110" />
 
