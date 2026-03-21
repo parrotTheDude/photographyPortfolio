@@ -54,7 +54,15 @@ find "$SRC_DIR" -type f -name "*.webp" \
         if [ "$src_width" -le "$w" ] && [ "$src_width" -gt 0 ]; then
             cp "$img" "$out"
         else
-            convert "$img" -resize "${w}x>" -quality 82 "$out"
+            # Lower quality for smaller sizes — they don't need it
+            if [ "$w" -le 640 ]; then
+                q=72
+            elif [ "$w" -le 1024 ]; then
+                q=76
+            else
+                q=80
+            fi
+            convert "$img" -resize "${w}x>" -quality "$q" "$out"
         fi
     done
 

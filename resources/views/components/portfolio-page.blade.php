@@ -38,7 +38,7 @@
              srcset="{{ asset('images/'.$heroBase.'-640w.webp') }} 640w,
                     {{ asset('images/'.$heroBase.'-1024w.webp') }} 1024w,
                     {{ asset('images/'.$heroBase.'-1920w.webp') }} 1920w"
-             sizes="(max-width: 767px) 100vw, 50vw"
+             sizes="(max-width: 767px) 100vw, (max-width: 1280px) 45vw, 588px"
              width="{{ $heroW }}" height="{{ $heroH }}"
              alt="{{ $title }} hero"
              fetchpriority="high"
