@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\View\View;
 use Postmark\PostmarkClient;
 use Exception;
 
 class ContactController extends Controller
 {
-    public function create()
+    public function create(): View
     {
         return view('pages.contact');
     }
 
-    public function store(ContactRequest $request)
+    public function store(ContactRequest $request): RedirectResponse
     {
         // Verify Google reCAPTCHA
         $captcha = Http::asForm()->post(

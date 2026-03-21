@@ -1,9 +1,19 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
+
+// Dynamic robots.txt — pulls sitemap URL from APP_URL
+Route::get('robots.txt', function () {
+    $sitemap = rtrim(config('app.url'), '/') . '/sitemap.xml';
+
+    return response("User-agent: *\nAllow: /\n\nSitemap: {$sitemap}\n", 200, [
+        'Content-Type' => 'text/plain',
+    ]);
+});
 
 // Home / portfolio grid
 Route::view('/', 'home')->name('home');
@@ -44,57 +54,59 @@ Route::view('/pets',     'photos.pets')->name('photos.pets');
 Route::view('/motion',   'photos.motion')->name('photos.motion');
 
 Route::get('sitemap.xml', function () {
-    $base = config('app.url');
+    $xml = Cache::remember('sitemap', 3600, function () {
+        return Sitemap::create()
+            // Core pages
+            ->add(Url::create('/')
+                ->setPriority(1.0)
+                ->setChangeFrequency('weekly')
+                ->setLastModificationDate(now()))
+            ->add(Url::create('/about')
+                ->setPriority(0.8)
+                ->setChangeFrequency('monthly'))
+            ->add(Url::create('/contact')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
+            ->add(Url::create('/photos')
+                ->setPriority(0.8)
+                ->setChangeFrequency('monthly'))
 
-    return Sitemap::create()
-        // Core pages
-        ->add(Url::create('/')
-            ->setPriority(1.0)
-            ->setChangeFrequency('weekly')
-            ->setLastModificationDate(now()))
-        ->add(Url::create('/about')
-            ->setPriority(0.8)
-            ->setChangeFrequency('monthly'))
-        ->add(Url::create('/contact')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
-        ->add(Url::create('/photos')
-            ->setPriority(0.8)
-            ->setChangeFrequency('monthly'))
+            // Projects
+            ->add(Url::create('/stitch')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
+            ->add(Url::create('/wholesomeHarvest')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
+            ->add(Url::create('/w7')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
+            ->add(Url::create('/marble')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
+            ->add(Url::create('/label')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
+            ->add(Url::create('/stump-cross-caverns')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
+            ->add(Url::create('/doors')
+                ->setPriority(0.7)
+                ->setChangeFrequency('yearly'))
 
-        // Projects
-        ->add(Url::create('/stitch')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
-        ->add(Url::create('/wholesomeHarvest')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
-        ->add(Url::create('/w7')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
-        ->add(Url::create('/marble')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
-        ->add(Url::create('/label')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
-        ->add(Url::create('/stump-cross-caverns')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
-        ->add(Url::create('/doors')
-            ->setPriority(0.7)
-            ->setChangeFrequency('yearly'))
+            // Photography collections
+            ->add(Url::create('/wildlife')
+                ->setPriority(0.6)
+                ->setChangeFrequency('monthly'))
+            ->add(Url::create('/pets')
+                ->setPriority(0.6)
+                ->setChangeFrequency('monthly'))
+            ->add(Url::create('/motion')
+                ->setPriority(0.6)
+                ->setChangeFrequency('monthly'))
 
-        // Photography collections
-        ->add(Url::create('/wildlife')
-            ->setPriority(0.6)
-            ->setChangeFrequency('monthly'))
-        ->add(Url::create('/pets')
-            ->setPriority(0.6)
-            ->setChangeFrequency('monthly'))
-        ->add(Url::create('/motion')
-            ->setPriority(0.6)
-            ->setChangeFrequency('monthly'))
+            ->render();
+    });
 
-        ->toResponse(request());
+    return response($xml, 200, ['Content-Type' => 'application/xml']);
 });
