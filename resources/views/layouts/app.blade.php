@@ -123,9 +123,9 @@
     {{-- MAIN CONTENT (comfortable spacing from fixed header) --}}
     <main
     class="px-4 animate-fade-in-up
-            pt-[calc(env(safe-area-inset-top)+5.5rem)]
-            md:pt-[calc(env(safe-area-inset-top)+6.5rem)]
-            lg:pt-[calc(env(safe-area-inset-top)+7rem)]"
+            pt-[calc(env(safe-area-inset-top)+4.5rem)]
+            md:pt-[calc(env(safe-area-inset-top)+5.5rem)]
+            lg:pt-[calc(env(safe-area-inset-top)+6rem)]"
     >
     @yield('content')
     </main>
