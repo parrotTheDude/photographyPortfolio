@@ -67,6 +67,7 @@
     </div>
 
     {{-- Capabilities + Approach --}}
+    <h2 class="sr-only">Capabilities</h2>
     <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         @foreach ([
             ['title'=>'Brand Identity',
