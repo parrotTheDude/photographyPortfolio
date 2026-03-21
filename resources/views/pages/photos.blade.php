@@ -28,6 +28,7 @@
     @endphp
 
     {{-- Big tiles, responsive grid --}}
+    <h2 class="sr-only">Collections</h2>
     <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 animate-fade-in-up">
         @foreach ($collections as $c)
             <a href="{{ $c['link'] }}"
