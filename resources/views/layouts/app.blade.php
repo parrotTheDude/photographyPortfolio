@@ -115,9 +115,6 @@
             </button>
         </div>
 
-        {{-- Optional soft gradient only AFTER scroll (subtle separation) --}}
-        <div x-show="scrolled" x-transition.opacity
-            class="pointer-events-none h-3 w-full bg-gradient-to-b from-black/20 to-transparent"></div>
         </header>
 
     {{-- MAIN CONTENT (comfortable spacing from fixed header) --}}
