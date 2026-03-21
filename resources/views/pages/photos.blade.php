@@ -53,7 +53,7 @@
                     sizes="(max-width: 767px) 100vw, 33vw"
                     width="{{ $colW }}" height="{{ $colH }}"
                     alt="{{ $c['title'] }} cover"
-                    @if($loop->first) fetchpriority="high" @else loading="lazy" @endif
+                    @if($loop->first) fetchpriority="high" @else loading="lazy" decoding="async" @endif
                     class="w-full h-[24rem] md:h-[30rem] lg:h-[36rem] xl:h-[42rem] object-cover
                            transition-transform duration-700 group-hover:scale-105" />
 

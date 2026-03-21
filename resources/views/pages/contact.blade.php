@@ -25,7 +25,7 @@
 
     <div>
       <label for="name" class="block text-sm font-medium text-white/70 mb-2">Name</label>
-      <input type="text" id="name" name="name" value="{{ old('name') }}" required
+      <input type="text" id="name" name="name" value="{{ old('name') }}" required autocomplete="name"
              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-[#f0b46d] focus:ring-1 focus:ring-[#f0b46d]/30 outline-none transition-colors duration-200 placeholder-white/20"
              placeholder="Your name" />
       @error('name') <p class="text-red-300 text-sm mt-1.5">{{ $message }}</p> @enderror
@@ -33,7 +33,7 @@
 
     <div>
       <label for="email" class="block text-sm font-medium text-white/70 mb-2">Email</label>
-      <input type="email" id="email" name="email" value="{{ old('email') }}" required
+      <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email"
              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-[#f0b46d] focus:ring-1 focus:ring-[#f0b46d]/30 outline-none transition-colors duration-200 placeholder-white/20"
              placeholder="your@email.com" />
       @error('email') <p class="text-red-300 text-sm mt-1.5">{{ $message }}</p> @enderror
@@ -62,9 +62,9 @@
       </button>
       <p class="text-xs text-white/30 pt-5">
         This site is protected by reCAPTCHA and the
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline hover:text-[#f0b46d] transition-colors">Google Privacy Policy</a>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#f0b46d] transition-colors">Google Privacy Policy</a>
         and
-        <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline hover:text-[#f0b46d] transition-colors">Terms of Service</a>
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#f0b46d] transition-colors">Terms of Service</a>
         apply.
       </p>
     </div>
@@ -145,7 +145,6 @@
     try { grecaptcha.execute(recapWidget); }
     catch (e) {
       resetButton();
-      console.error(e);
     }
   });
 

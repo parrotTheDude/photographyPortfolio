@@ -24,9 +24,6 @@
   <meta property="og:description" content="@yield('og_description', 'Graphic design & photography by Evie Bowerman')">
   <meta property="og:image" content="@yield('og_image', asset('images/displayImgs/stitchOL.webp'))">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="@yield('og_title', 'Evie Bowerman')">
-  <meta name="twitter:description" content="@yield('og_description', 'Graphic design & photography by Evie Bowerman')">
-  <meta name="twitter:image" content="@yield('og_image', asset('images/displayImgs/stitchOL.webp'))">
 
   {{-- CSRF --}}
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -35,7 +32,7 @@
   @vite(['resources/css/app.css','resources/js/app.js'])
 
   {{-- Scripts --}}
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.8/dist/cdn.min.js"></script>
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
   {{-- Sitewide JSON-LD --}}
@@ -142,7 +139,7 @@
             'email'    => '/contact'
           ] as $icon => $url)
             <a href="{{ $url }}"
-               @if(str_starts_with($url, 'http')) target="_blank" rel="noopener" @endif
+               @if(str_starts_with($url, 'http')) target="_blank" rel="noopener noreferrer" @endif
                class="group transition transform hover:scale-110">
               <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}"
                    width="28" height="28"
@@ -157,7 +154,7 @@
         {{-- Credit --}}
         <p class="text-center text-xs text-gray-400 tracking-wide">
           Built & designed by
-          <a href="https://www.bowermandigital.com/" target="_blank" rel="noopener"
+          <a href="https://www.bowermandigital.com/" target="_blank" rel="noopener noreferrer"
              class="text-gray-300 underline decoration-gray-500 hover:text-[#f0b46d] hover:decoration-[#f0b46d] transition-colors">Bowerman Digital</a>
         </p>
 
@@ -234,7 +231,7 @@
               'email'    => '/contact'
             ] as $icon => $url)
               <a href="{{ $url }}" @click="mobileOpen=false"
-                 @if(str_starts_with($url, 'http')) target="_blank" rel="noopener" @endif
+                 @if(str_starts_with($url, 'http')) target="_blank" rel="noopener noreferrer" @endif
                  class="group transition transform hover:scale-110">
                 <img src="{{ asset("images/icons/$icon.svg") }}" alt="{{ ucfirst($icon) }}"
                      width="24" height="24"

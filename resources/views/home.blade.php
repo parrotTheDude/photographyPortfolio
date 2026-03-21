@@ -71,7 +71,7 @@
                      sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                      width="{{ $imgW }}" height="{{ $imgH }}"
                      alt="{{ $p['title'] }}"
-                     @if($loop->first) fetchpriority="high" @else loading="lazy" @endif
+                     @if($loop->first) fetchpriority="high" @else loading="lazy" decoding="async" @endif
                      class="w-full h-[24rem] md:h-[30rem] lg:h-[34rem] xl:h-[40rem]
                             object-cover transition-transform duration-700 group-hover:scale-105">
 

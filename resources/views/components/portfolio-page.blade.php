@@ -103,7 +103,7 @@
                sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
                width="{{ $galW }}" height="{{ $galH }}"
                alt="{{ $title }} image {{ $i + 1 }}"
-               loading="lazy"
+               loading="lazy" decoding="async"
                class="w-full h-[26rem] md:h-[30rem] lg:h-[34rem] xl:h-[40rem] object-cover transition-transform duration-700 group-hover:scale-105">
           {{-- Expand hint on hover --}}
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 flex items-center justify-center">
@@ -211,7 +211,7 @@
                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
                  width="{{ $relW }}" height="{{ $relH }}"
                  alt="{{ $p['title'] }}"
-                 loading="lazy"
+                 loading="lazy" decoding="async"
                  class="w-full h-[22rem] lg:h-[26rem] object-cover transition-transform duration-700 group-hover:scale-105">
 
             {{-- Hover overlay --}}

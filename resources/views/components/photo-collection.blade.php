@@ -58,7 +58,7 @@
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
           width="{{ $photoW }}" height="{{ $photoH }}"
           alt="{{ $title }} photo {{ $i+1 }}"
-          @if($i === 0) fetchpriority="high" @else loading="lazy" @endif
+          @if($i === 0) fetchpriority="high" @else loading="lazy" decoding="async" @endif
           class="w-full h-[22rem] md:h-[26rem] lg:h-[30rem] xl:h-[36rem]
                  object-cover transition-transform duration-700 group-hover:scale-105"
         />
