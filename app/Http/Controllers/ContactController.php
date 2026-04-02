@@ -40,7 +40,7 @@ class ContactController extends Controller
         }
 
         try {
-            $client   = new PostmarkClient(config('services.postmark.token'));
+            $client   = app(PostmarkClient::class);
 
             $from     = config('services.contact.from_address');
             $fromName = config('services.contact.from_name');
