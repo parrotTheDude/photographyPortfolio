@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Back soon — Evie Bowerman</title>
   <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="30">
   <style>
     :root { --bg:#0f1714; --grad1:#1b2421; --grad2:#22332d; --text:#f1f3ee; --accent:#f0b46d; }
     html,body { height:100%; margin:0 }
