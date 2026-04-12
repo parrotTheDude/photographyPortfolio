@@ -1,2 +1,9 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://eviebowerman.com/sitemap.xml
+
+# LLM-friendly content
+# See https://llmstxt.org for the specification
+# llms.txt:      https://eviebowerman.com/llms.txt
+# llms-full.txt: https://eviebowerman.com/llms-full.txt

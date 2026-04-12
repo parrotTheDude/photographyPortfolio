@@ -1,0 +1,48 @@
+# Evie Bowerman
+
+> Graphic designer and photographer based in North Yorkshire, UK, specialising in brand identity, packaging, and image-led storytelling. Portfolio showcasing design projects and photography collections.
+
+Evie Bowerman is a Northumbria University graduate with 4+ years of experience in graphic design and photography. She specialises in brand identity, packaging, typography, art direction, retouching, and photography. She is currently available for brand and packaging projects and booking product and portrait shoots, based in North Yorkshire, UK.
+
+## Capabilities
+
+Evie offers six core services: Brand Identity (logos, visual systems, brand guidelines), Packaging & Print (product packaging, print collateral, label design), Photography (product, portrait, wildlife, pet, and motion photography), Art Direction (creative direction for campaigns and shoots), Digital & Social (social media assets, digital design), and Retouching (photo editing and post-production).
+
+## Portfolio — Design Projects
+
+- [Stitch Tailoring](https://eviebowerman.com/stitch): Brand identity for a custom clothing brand abolishing the traditional sizing system. A complete visual identity including logo, typography, packaging, and brand collateral (2024).
+- [Wholesome Harvest](https://eviebowerman.com/wholesomeHarvest): Brand identity and packaging design project featuring natural, organic visual language (2024).
+- [W7 Rebrand](https://eviebowerman.com/w7): Complete brand rebrand for W7 cosmetics, including new visual identity, packaging system, and brand guidelines (2023).
+- [Marble Blue](https://eviebowerman.com/marble): Brand identity and packaging design with a sophisticated, contemporary aesthetic (2024).
+- [Label Less](https://eviebowerman.com/label): Brand identity project exploring minimalist, label-free design principles (2022).
+- [Stump Cross Caverns](https://eviebowerman.com/stump-cross-caverns): Branding and visual identity for a North Yorkshire cave tourism attraction, combining heritage with modern design (2025).
+- [L.A. Women, The Doors](https://eviebowerman.com/doors): Creative design project inspired by The Doors, featuring editorial and typographic design (2023).
+
+## Photography Collections
+
+- [Wildlife Photography](https://eviebowerman.com/wildlife): A 17-image collection from Borneo featuring orangutans, proboscis monkeys, and tropical birdlife. Captures intimate moments of wildlife in their natural rainforest habitat.
+- [Pet Photography](https://eviebowerman.com/pets): Professional pet portrait photography capturing the personality and character of animals (2024).
+- [Motion Photography](https://eviebowerman.com/motion): Dynamic action and motion photography exploring movement and energy through the camera lens (2024).
+
+## About Evie
+
+- [About Page](https://eviebowerman.com/about): Full biography, list of capabilities, creative process overview, career statistics (4+ years creating, 25+ projects and shoots), and current availability for commissions.
+
+Evie's working process centres on understanding the brief deeply, developing concepts rooted in research, and delivering polished work that tells a story. Her approach combines strategic thinking with visual craft.
+
+## Contact
+
+- [Contact Form](https://eviebowerman.com/contact): Reach out for brand identity, packaging design, or photography commissions. Available for freelance projects and collaborations.
+- Email enquiries are welcome through the website contact form.
+- Response to project enquiries is typically prompt.
+
+## Social & Web Presence
+
+- Website: https://eviebowerman.com
+- LinkedIn: https://www.linkedin.com/in/evie-bowerman-2a56a7232/
+- Instagram: https://www.instagram.com/bowermandesigns/
+- Site built by: https://www.bowermandigital.com/
+
+## Technical
+
+This is a server-rendered Laravel application using Blade templates, Tailwind CSS, and Alpine.js. All images are served in WebP format with responsive srcsets. The site includes structured data (JSON-LD), Open Graph meta tags, an XML sitemap, and a web app manifest for PWA support.

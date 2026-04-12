@@ -8,11 +8,13 @@ use Spatie\Sitemap\Tags\Url;
 
 // Dynamic robots.txt — pulls sitemap URL from APP_URL
 Route::get('robots.txt', function () {
-    $sitemap = rtrim(config('app.url'), '/') . '/sitemap.xml';
+    $base = rtrim(config('app.url'), '/');
 
-    return response("User-agent: *\nAllow: /\n\nSitemap: {$sitemap}\n", 200, [
-        'Content-Type' => 'text/plain',
-    ]);
+    return response(
+        "User-agent: *\nAllow: /\n\nSitemap: {$base}/sitemap.xml\n\n# LLM-friendly content\n# See https://llmstxt.org for the specification\n# llms.txt:      {$base}/llms.txt\n# llms-full.txt: {$base}/llms-full.txt\n",
+        200,
+        ['Content-Type' => 'text/plain']
+    );
 });
 
 // Home / portfolio grid

@@ -9,6 +9,10 @@
   <meta name="description" content="@yield('meta_description', 'Graphic design & photography by Evie Bowerman')">
   <link rel="canonical" href="{{ url()->current() }}">
 
+  {{-- LLMs.txt discoverability --}}
+  <link rel="help" type="text/markdown" href="/llms.txt" title="LLM-friendly site summary">
+  <link rel="help" type="text/markdown" href="/llms-full.txt" title="LLM-friendly full site content">
+
   {{-- Favicons / PWA --}}
 
   <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
